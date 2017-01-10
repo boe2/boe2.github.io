@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Battle Spot Usage Stats</title>
+    <meta charset="utf-8">
+    <link href="css/bsus.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/swabluicon.png">
+</head>
+
+<body>
+    <div id="header">
+        <h2 id="headertext"> Battle Spot Usage Stats (beta) </h2>
+    </div>
+    <div id="info">
+        <div id="selectandbutton"><label id="selectformat">Select format:</label>
+            <select id="select">
+               <option disabled value="#">
+                  Gen 7
+               </option>
+               <option disabled value="#">
+                  Season 1 - Not available yet!
+               </option>
+               <option disabled value="#">
+                  Competitions
+               </option>
+               <option value="competition4101">
+                  Battle of Alola - Junior Division
+               </option>
+               <option value="competition4102" selected="selected">
+                  Battle of Alola - Masters Division
+               </option>			   
+               <option disabled value="#">
+                  Gen 6 Ladders
+               </option>
+               <option value="oras_117_1">
+                  ORAS Season 17 - Singles
+               </option>
+               <option value="oras_117_2">
+                  ORAS Season 17 - Doubles
+               </option>
+               <option value="oras_117_3">
+                  ORAS Season 17 - Triples
+               </option>
+               <option value="oras_117_4">
+                  ORAS Season 17 - Rotations
+               </option>
+            </select>
+            <button onclick="resetData(0, true)" type="button2">Show stats!</button>
+			<p id="formatinfo"> Selected format:  </p>
+        </div>
+    </div>
+    <div id="left">
+        <div id="leftcontent">
+            <div id="pokemonbyranking">
+                Pokemon by ranking
+            </div>
+			<div>
+			<div id="searchtext">Search: 
+			</div>
+			<div> <input id="searchbox" type="text" oninput="updateSearch()" value="">
+			</div>
+			</div>
+            <div id="border">
+            </div>
+            <div id="buttonlist"></div>
+        </div>
+    </div>
+    <div id="right">
+        <div id="rightcontent">
+            <div id="tabs"><span id="tabsspan">
+               <span id="tabbutton0" class="coloredbutton" onclick="setTab(0)">Moves</span> |
+                <span id="tabbutton1" class="coloredbutton" onclick="setTab(1)">Items</span> |
+                <span id="tabbutton2" class="coloredbutton" onclick="setTab(2)">Abilities</span> |
+                <span id="tabbutton3" class="coloredbutton" onclick="setTab(3)">Natures</span> |
+                <span id="tabbutton4" class="coloredbutton" onclick="setTab(4)">Moves when victorious</span> |
+                <span id="tabbutton5" class="coloredbutton" onclick="setTab(5)">Opponents when victorious</span> |
+                <span id="tabbutton6" class="coloredbutton" onclick="setTab(6)">Moves when defeated</span> |
+                <span id="tabbutton7" class="coloredbutton" onclick="setTab(7)">Opponents when defeated</span> |
+                <span id="tabbutton8" class="coloredbutton" onclick="setTab(8)">Teammates</span></span>
+            </div>
+            <div id="monsinfo">
+                <p id="monsinfo2">info</p>
+                <p id="tabname"><span id="tabnamespan">Moves</span></p>
+                <p id="noitems"></p>
+            </div>
+            <table id="table">
+                <tr>
+                    <td id="td1">#1</td>
+                    <td id="td2">-</td>
+                    <td id="td3">-</td>
+                </tr>
+                <tr>
+                    <td id="td4">#2</td>
+                    <td id="td5">-</td>
+                    <td id="td6">-</td>
+                </tr>
+                <tr>
+                    <td id="td7">#3</td>
+                    <td id="td8">-</td>
+                    <td id="td9">-</td>
+                </tr>
+                <tr>
+                    <td id="td10">#4</td>
+                    <td id="td11">-</td>
+                    <td id="td12">-</td>
+                </tr>
+                <tr>
+                    <td id="td13">#5</td>
+                    <td id="td14">-</td>
+                    <td id="td15">-</td>
+                </tr>
+                <tr>
+                    <td id="td16">#6</td>
+                    <td id="td17">-</td>
+                    <td id="td18">-</td>
+                </tr>
+                <tr>
+                    <td id="td19">#7</td>
+                    <td id="td20">-</td>
+                    <td id="td21">-</td>
+                </tr>
+                <tr>
+                    <td id="td22">#8</td>
+                    <td id="td23">-</td>
+                    <td id="td24">-</td>
+                </tr>
+                <tr>
+                    <td id="td25">#9</td>
+                    <td id="td26">-</td>
+                    <td id="td27">-</td>
+                </tr>
+                <tr>
+                    <td id="td28">#10</td>
+                    <td id="td29">-</td>
+                    <td id="td30">-</td>
+                </tr>
+                <tr>
+                    <td id="td31">#11</td>
+                    <td id="td32">-</td>
+                    <td id="td33">-</td>
+                </tr>
+                <tr>
+                    <td id="td34">#12</td>
+                    <td id="td35">-</td>
+                    <td id="td36">-</td>
+                </tr>
+                <tr>
+                    <td id="td37">#13</td>
+                    <td id="td38">-</td>
+                    <td id="td39">-</td>
+                </tr>
+                <tr>
+                    <td id="td40">#14</td>
+                    <td id="td41">-</td>
+                    <td id="td42">-</td>
+                </tr>
+                <tr>
+                    <td id="td43">#15</td>
+                    <td id="td44">-</td>
+                    <td id="td45">-</td>
+                </tr>
+                <tr>
+                    <td id="td46">#16</td>
+                    <td id="td47">-</td>
+                    <td id="td48">-</td>
+                </tr>
+                <tr>
+                    <td id="td49">#17</td>
+                    <td id="td50">-</td>
+                    <td id="td51">-</td>
+                </tr>
+                <tr>
+                    <td id="td52">#18</td>
+                    <td id="td53">-</td>
+                    <td id="td54">-</td>
+                </tr>
+                <tr>
+                    <td id="td55">#19</td>
+                    <td id="td56">-</td>
+                    <td id="td57">-</td>
+                </tr>
+                <tr>
+                    <td id="td58">#20</td>
+                    <td id="td59">-</td>
+                    <td id="td60">-</td>
+                </tr>
+                <tr>
+                    <td id="td61"></td>
+                    <td id="td62">-</td>
+                    <td id="td63">-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="about">about this page
+        <span class="credits"> <img id="leftswablu" src="images/swabluicon.png">by <b> boe</b><img id="rightswablu" src="images/swabluicon.png"><br><br> a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to <b> Fischgrat </b>and <b>Alpha Ninja</b> who helped out a lot and <b>hetoord </b> who made the original battlespotstats.com <br> <br> for questions, errors, or anything else, please contact me at boehijt@gmail.com or send me a message on Smogon or Pokemon Showdown! <br> <br> <b>Pokemon</b> is © 1995-2017 <b> Nintendo</b></span>
+    </div>
+    <script src="data/dict.js"></script>
+    <script src="data/aliases.js"></script>
+    <script src="data/competition4101.js"></script>
+    <script src="data/competition4102.js"></script>
+    <script src="data/117_1.js"></script>
+    <script src="data/117_2.js"></script>
+    <script src="data/117_3.js"></script>	
+    <script src="data/117_4.js"></script>
+    <script src="scripts/bsus.js"></script>
+</body>
+
+</html>

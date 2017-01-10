@@ -1,0 +1,270 @@
+body {
+    overflow-x: hidden;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1em;
+    overflow-y: hidden;
+}
+#selectandbutton {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+#header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #498FAC;
+    color: white;
+    text-align: center;
+    height: 62px;
+    line-height: 50px;
+    margin: auto;
+    padding: 0px;
+    border: 8px solid white;
+    border-radius: 0px;
+}
+#headertext {
+    position: absolute;
+    top: -15px;
+    text-align: center;
+    width: 100%;
+}
+#swablu1 {
+    position: relative;
+    top: 6px;
+    left: -10px;
+}
+#swablu2 {
+    position: relative;
+    top: 6px;
+    left: 10px;
+}
+#info {
+    background-color: #D9F4EE;
+    position: absolute;
+    top: 69px;
+    height: 70px;
+    left: 0px;
+    right: 0px;
+    border: 8px solid white;
+    border-radius: 0px;
+}
+#left {
+    background-color: #D9F4EE;
+    position: absolute;
+    overflow-y: auto;
+    width: 231px;
+    top: 148px;
+    bottom: 0px;
+    left: 0px;
+    border: 8px solid white;
+    border-radius: 0px;
+}
+#right {
+    background-color: #D9F4EE;
+    position: absolute;
+    overflow-y: auto;
+    left: 246px;
+    top: 148px;
+    bottom: 0px;
+    right: 0px;
+    border: 8px solid white;
+    border-radius: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#pokemonbyranking {
+    background-color: #A2D8D1;
+    color: black;
+    margin-bottom: 6px;
+    margin-top: 4px;
+    margin-left: 2px;
+    border: 2px solid #A2D8D1;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-radius: 0px;
+    width: 194px;
+    height: 21px;
+    text-align: center;
+}
+#border {
+    margin-bottom: 6px;
+    margin-top: 4px;
+    margin-left: 4px;
+    border: 1px solid #A2D8D1;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+}
+#left {
+    overflow-x: hidden;
+}
+#leftcontent {
+    position: absolute;
+    left: 3px;
+    top: 10px;
+}
+#rightcontent {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+#tabs {
+    background-color: #A2D8D1;
+    color: black;
+    margin-bottom: 6px;
+    margin-top: 4px;
+    margin-left: 2px;
+    border: 2px solid #A2D8D1;
+    border-left-width: 5px;
+    border-right-width: 2px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-radius: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+}
+.about {
+    position: absolute;
+    top: 83px;
+    right: 24px;
+    text-align: right;
+    border-bottom: 1px dotted black;
+}
+.about .credits {
+    visibility: hidden;
+    width: 450px;
+    background-color: #498FAC;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: -1190%;
+    left: -247%;
+    margin-left: -60px;
+    font-size: 13px;
+}
+#leftswablu {
+    position: absolute;
+    right: 37%;
+}
+#rightswablu {
+    position: absolute;
+    left: 37%;
+}
+.about:hover .credits {
+    visibility: visible;
+    opacity: 0.9;
+}
+#tabnamespan {
+    margin-left: 3px;
+    background-color: #A2D8D1;
+    padding: 4px 20px;
+    border: none;
+    color: black;
+    font-family: sans-serif;
+    font-size: 1em;
+    border-radius: 0px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+.coloredbutton {
+    background-color: #A2D8D1;
+    padding: 0px 20px;
+    border: none;
+    color: black;
+    font-family: sans-serif;
+    font-size: 1em;
+    border-radius: 0px;
+    font-family: "Segoe UI", Arial, sans-serif;
+	cursor: pointer;
+}
+.coloredclickedbutton {
+    background-color: #498FAC;
+    padding: 0px 20px;
+    border: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1em;
+    border-radius: 0px;
+    font-family: "Segoe UI", Arial, sans-serif;
+	cursor: pointer;
+}
+.button {
+    border: 1px solid #A2D8D1;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+	height: 30px;
+	cursor: pointer;
+}
+.button:hover {
+    background-color: #A2D8D1;
+    margin-bottom: 5px;
+    margin-top: 4px;
+    margin-left: 2px;
+    border: 2px solid #A2D8D1;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-radius: 0px;
+	cursor: pointer;
+}
+.clickedbutton {
+    background-color: #A2D8D1;
+    margin-bottom: 5px;
+    margin-top: 4px;
+    margin-left: 2px;
+    color: black;
+    border: 2px solid #A2D8D1;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-radius: 0px;
+	cursor: pointer;
+	height: 30px;
+}
+.tab {
+    border: 1px solid #A2D8D1;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    float: left;
+	cursor: pointer;
+}
+.tab:hover {
+    background-color: #A2D8D1;
+	cursor: pointer;
+}
+#searchtext {
+    margin-left: 4px;
+	float: left;
+}
+#searchbox {
+	width: 67%;
+	margin-left: 4px;
+}
+select option:disabled {
+    color: #000000;
+    font-weight: bold;
+}
+.pokemonbutton {
+	position: relative;
+	top: -7px;
+	left: 4px;
+}
