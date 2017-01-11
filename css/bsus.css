@@ -223,11 +223,11 @@ body {
     background-color: #A2D8D1;
     margin-bottom: 5px;
     margin-top: 4px;
-    margin-left: 2px;
+    margin-left: 6px;
     color: black;
-    border: 2px solid #A2D8D1;
-    border-left-width: 2px;
-    border-right-width: 2px;
+    border: 2px solid #498FAC;
+    border-left-width: 6px;
+    border-right-width: 0px;
     border-top-width: 0px;
     border-bottom-width: 0px;
     border-radius: 0px;

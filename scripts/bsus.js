@@ -13,37 +13,40 @@ var tabnum = 44;
 function createButtons() {
 
 	for (i = 0; i < items.length; i++) {
-		
-		var dontadd = false;
-		
-		var div = document.createElement("div");
-		
-		var pokedexNo;
-		var name = "";
-		if (dict[items[i][0]].substring(dict[items[i][0]].length-6) != "-Alola"){
-			pokedexNo = items[i][0].substring(0, items[i][0].length - 2);	
-		}else{
-			pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
-		}
-		
-		try {
-			name = dict[items[i][0]];	
-		}catch(err){
-			dontadd = true;
-		}
-		
-		div.innerHTML = "<img src=\"images/" + pokedexNo + ".png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - " + name + "</span>";
-		
-		if (i == mon) {
-			div.setAttribute("class", "clickedbutton");
-		} else {
-			div.setAttribute("class", "button");
-		}
-		div.setAttribute("onClick", "resetData(" + i + "), false");
-		div.setAttribute("id", "button" + i);
-		if (dontadd == false){
-			document.getElementById("buttonlist").appendChild(div);
+		if (items[i] != undefined){
 			
+			var div = document.createElement("div");
+			
+			var pokedexNo;
+			
+
+			name = dict[items[i][0]];	
+
+			if (name.substring(name.length-6) != "-Alola" && name.substring(name.length-2) != "-T" ){
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2);	
+			}else if (dict[items[i][0]].substring(dict[items[i][0]].length-6) == "-Alola"){			
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
+			} else {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";
+			}
+			
+			if (pokedexNo == ""){
+				pokedexNo = "undefined";
+			}
+			
+			div.innerHTML = "<img src=\"images/" + pokedexNo + ".png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - " + name + "</span>";
+			
+			if (i == mon) {
+				div.setAttribute("class", "clickedbutton");
+			} else {
+				div.setAttribute("class", "button");
+			}
+			div.setAttribute("onClick", "resetData(" + i + "), false");
+			div.setAttribute("id", "button" + i);
+			if (div.innerHTML != "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>"){
+				document.getElementById("buttonlist").appendChild(div);
+				
+			}
 		}
 	}
 }
@@ -234,46 +237,43 @@ function resetData(number, resetsearch) {
 function updateSearch(){
 	
 	var value = document.getElementById("searchbox").value;
-	
-		if(items[i] != undefined){
-			
-			for (var i = 0; i < items.length; i++){
-				pokename = dict[items[i][0]];
-				pokeid = items[i][0];
-				
-				if (pokename == undefined){			
-					document.getElementById("button" + i.toString()).style.display = "none";	
-				}else{		
-					valueLowerCase = value.toLowerCase();
-					pokenameLowerCase = pokename.toLowerCase();
-				}
-				
-				var include = false;
-				
-				if (pokenameLowerCase.includes(valueLowerCase)){
-					include = true;
-				}
-				if (pokeid.includes(value)){
-					include = true;
-				}
-				if ((i+1).toString().includes(value)){
-					include = true;
-				}		
+		
+	for (var i = 0; i < items.length; i++){
+		pokename = dict[items[i][0]];
+		pokeid = items[i][0];
+		
+		if (pokename == null){			
+		}else{		
+			valueLowerCase = value.toLowerCase();
+			pokenameLowerCase = pokename.toLowerCase();
+		}
+		
+		var include = false;
+		
+		if (pokenameLowerCase.includes(valueLowerCase)){
+			include = true;
+		}
+		if (pokeid.includes(value)){
+			include = true;
+		}
+		if ((i+1).toString().includes(value)){
+			include = true;
+		}		
 
-				for (var alias in aliases){
-					if (alias.includes(value) && pokeid == aliases[alias]){
-						include = true;
-					}			
-				}			
-				
-				if (include == false){
-					document.getElementById("button" + i.toString()).style.display = "none";			
-				}
-				if (include == true){
-					document.getElementById("button" + i.toString()).style.display = "block";			
-				}
-				
-			}
+		for (var alias in aliases){
+			if (alias.includes(value) && pokeid == aliases[alias]){
+				include = true;
+			}			
+		}			
+		
+		if (include == false){
+			document.getElementById("button" + i.toString()).style.display = "none";			
+		}
+		if (include == true && document.getElementById("button" + i.toString()) != null){
+			document.getElementById("button" + i.toString()).style.display = "block";			
+		}
+			
+		
 	}
 	
 	
