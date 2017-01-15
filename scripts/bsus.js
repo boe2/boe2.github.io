@@ -198,9 +198,13 @@ function updateSearch(){
 	var value = document.getElementById("searchbox").value;
 		
 	for (var i = 0; i < items.length; i++){
-		pokename = dict[items[i][0]];
-		pokeid = items[i][0];
 		
+		try{
+			pokename = dict[items[i][0]];
+			pokeid = items[i][0];
+		}catch (e){
+			console.log(i);
+		}
 		if (pokename != null){		
 			valueLowerCase = value.toLowerCase();
 			pokenameLowerCase = pokename.toLowerCase();
