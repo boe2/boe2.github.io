@@ -16,43 +16,59 @@ var tabnums = [44, 4, 84, 90, 130, 170, 190, 230, 250];
 
 function createButtons() {
 
-	for (i = 0; i < items.length; i++) {
-		if (items[i] != undefined){
-			
-			var div = document.createElement("div");
-			
-			var pokedexNo;
-			
+    for (i = 0; i < items.length; i++) {
+        if (items[i] != undefined) {
 
-			name = dict[items[i][0]];	
+            var div = document.createElement("div");
 
-			if (name.substring(name.length-6) != "-Alola" && name.substring(name.length-2) != "-T" ){
-				pokedexNo = items[i][0].substring(0, items[i][0].length - 2);	
-			}else if (dict[items[i][0]].substring(dict[items[i][0]].length-6) == "-Alola"){			
+            var pokedexNo;
+
+
+            name = dict[items[i][0]];
+
+            if (name.substring(name.length - 6) == "-Alola") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
+            } else if (name == "Rotom-Wash") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "w";
+            } else if (name == "Rotom-Heat") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "h";
+            } else if (name == "Rotom-Fan") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "s";
+            } else if (name == "Rotom-Frost") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "f";
+            } else if (name == "Rotom-Mow") {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "m";
+			} else if (name == "Ash-Greninja") {
 				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
+			} else if (name == "Lycanroc-Midday") {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
+			} else if (name == "Lycanroc-Midnight") {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-m";
+			} else if (name.includes("-T")){
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";				
 			} else {
-				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";
-			}
-			
-			if (pokedexNo == ""){
-				pokedexNo = "undefined";
-			}
-			
-			div.innerHTML = "<img src=\"images/" + pokedexNo + ".png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - " + name + "</span>";
-			
-			if (i == mon) {
-				div.setAttribute("class", "clickedbutton");
-			} else {
-				div.setAttribute("class", "button");
-			}
-			div.setAttribute("onClick", "resetData(" + i + "), false");
-			div.setAttribute("id", "button" + i);
-			if (div.innerHTML != "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>"){
-				document.getElementById("buttonlist").appendChild(div);
-				
-			}
-		}
-	}
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
+            }
+
+            if (pokedexNo == "") {
+                pokedexNo = "undefined";
+            }
+
+            div.innerHTML = "<img src=\"images/" + pokedexNo + ".png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - " + name + "</span>";
+
+            if (i == mon) {
+                div.setAttribute("class", "clickedbutton");
+            } else {
+                div.setAttribute("class", "button");
+            }
+            div.setAttribute("onClick", "resetData(" + i + "), false");
+            div.setAttribute("id", "button" + i);
+            if (div.innerHTML != "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>") {
+                document.getElementById("buttonlist").appendChild(div);
+
+            }
+        }
+    }
 }
 
 
@@ -159,89 +175,89 @@ function setData(number) {
 
 function setTab(number) {
     tab = number;
-	var buttonname;
+    var buttonname;
 
-	for (var i = 0; i < 9; i ++){
-		buttonname = "tabbutton" + i.toString();
-		document.getElementById(buttonname).className = "coloredbutton";
-		
-	}
-	
-	buttonname = "tabbutton" + tab.toString();
-	tabnum = tabnums[tab];	
-    document.getElementById("tabnamespan").innerHTML = tabnames[tab];	
+    for (var i = 0; i < 9; i++) {
+        buttonname = "tabbutton" + i.toString();
+        document.getElementById(buttonname).className = "coloredbutton";
+
+    }
+
+    buttonname = "tabbutton" + tab.toString();
+    tabnum = tabnums[tab];
+    document.getElementById("tabnamespan").innerHTML = tabnames[tab];
     document.getElementById(buttonname).className = "coloredclickedbutton";
-	
+
     setData(mon);
 }
 
 function resetData(number, resetsearch) {
-	
-	if (resetsearch == true){
-		document.getElementById("searchbox").value = "";		
-	}
+
+    if (resetsearch == true) {
+        document.getElementById("searchbox").value = "";
+    }
 
     document.getElementById("buttonlist").innerHTML = "";
 
     var value = select.options[select.selectedIndex].value;
-	updateFormatInfo(value);
+    updateFormatInfo(value);
     mon = number;
     setTab(0);
     createButtons();
     setData(mon);
-	updateSearch();
+    updateSearch();
 
 }
 
-function updateSearch(){
-	
-	var value = document.getElementById("searchbox").value;
-		
-	for (var i = 0; i < items.length; i++){
-		
-		try{
-			pokename = dict[items[i][0]];
-			pokeid = items[i][0];
-		}catch (e){
-			console.log(i);
-		}
-		if (pokename != null){		
-			valueLowerCase = value.toLowerCase();
-			pokenameLowerCase = pokename.toLowerCase();
-		}
-		
-		var include = false;
-		
-		if (pokenameLowerCase.includes(valueLowerCase) || pokeid.includes(value) || (i+1).toString().includes(value)){
-			include = true;
-		}
+function updateSearch() {
 
-		for (var alias in aliases){
-			if (alias.includes(value) && pokeid == aliases[alias]){
-				include = true;
-			}			
-		}			
-		
-		if (include == false){
-			try {				
-				document.getElementById("button" + i.toString()).style.display = "none";
-			} catch (e)	{
-				
-			}
-		} else if (include == true && document.getElementById("button" + i.toString()) != null){
-			document.getElementById("button" + i.toString()).style.display = "block";			
-		}
-		
-	}
-		
+    var value = document.getElementById("searchbox").value;
+
+    for (var i = 0; i < items.length; i++) {
+
+        try {
+            pokename = dict[items[i][0]];
+            pokeid = items[i][0];
+        } catch (e) {
+            console.log(i);
+        }
+        if (pokename != null) {
+            valueLowerCase = value.toLowerCase();
+            pokenameLowerCase = pokename.toLowerCase();
+        }
+
+        var include = false;
+
+        if (pokenameLowerCase.includes(valueLowerCase) || pokeid.includes(value) || (i + 1).toString().includes(value)) {
+            include = true;
+        }
+
+        for (var alias in aliases) {
+            if (alias.includes(value) && pokeid == aliases[alias]) {
+                include = true;
+            }
+        }
+
+        if (include == false) {
+            try {
+                document.getElementById("button" + i.toString()).style.display = "none";
+            } catch (e) {
+
+            }
+        } else if (include == true && document.getElementById("button" + i.toString()) != null) {
+            document.getElementById("button" + i.toString()).style.display = "block";
+        }
+
+    }
+
 }
 
-function updateFormatInfo(format){
-	var formatinfo = "";		
+function updateFormatInfo(format) {
+    var formatinfo = "";
     items = window[format];
-	totalusage = window[format + "_totalusage"];
-	formatinfo = formatinfodict[format];	
-	document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
+    totalusage = window[format + "_totalusage"];
+    formatinfo = formatinfodict[format];
+    document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
 }
 
 resetData(0);

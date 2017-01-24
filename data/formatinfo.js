@@ -5,4 +5,9 @@ var formatinfodict = {
 	"oras_117_2": "ORAS Season 17 - Doubles - NOTE: displaying ORAS data might cause errors or might have Pokemon missing in the list!",
 	"oras_117_3": "ORAS Season 17 - Triples - NOTE: displaying ORAS data might cause errors or might have Pokemon missing in the list!",
 	"oras_117_4": "ORAS Season 17 - Rotations - NOTE: displaying ORAS data might cause errors or might have Pokemon missing in the list!",
+	"sm_202_0": "SM Season 2 - All",
+	"sm_202_1": "SM Season 2 - Singles",
+	"sm_202_2": "SM Season 2 - Doubles",
+	"sm_202_3": "SM Season 2 - Championships (VGC)",
+	"sm_202_4": "SM Season 2 - Special"
 }
