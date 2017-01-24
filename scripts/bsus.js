@@ -12,6 +12,7 @@ var tabnum = 44;
 
 var tabnames = ["Moves", "Items", "Abilities", "Natures", "Moves when victorious", "Opponents when victorious", "Moves when defeated", "Opponents when defeated", "Teammates"];
 var tabnums = [44, 4, 84, 90, 130, 170, 190, 230, 250];
+var datanames = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 84, 86, 88];
 
 
 function createButtons() {
@@ -22,7 +23,6 @@ function createButtons() {
             var div = document.createElement("div");
 
             var pokedexNo;
-
 
             name = dict[items[i][0]];
 
@@ -46,6 +46,8 @@ function createButtons() {
 				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-m";
 			} else if (name.includes("-T")){
 				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";				
+			} else if (name.includes("Silvally") && items[i][0].length == 6) { 
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 3);		
 			} else {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             }
@@ -82,7 +84,7 @@ function setData(number) {
         type = items[number][2];
     }
     pokedexNo = items[number][0].substring(0, items[number][0].length - 2);
-    document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + dict[items[number][0]] + " - " + type + " type" + " - Estimated usage: " + Math.round(items[number][items[number].length - 1] / totalusage * 60000) / 100 + "%";
+    document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + dict[items[number][0]] + " - " + type + " type" + " - Estimated usage: " + Math.round(items[number][items[number].length - 1] / totalusage * 600000) / 1000 + "%";
     if (tab == 0 || tab == 1 || tab == 2 || tab == 3 || tab == 4 || tab == 6) {
         var totalperc = 0;
         var stop = 20;
@@ -231,8 +233,26 @@ function updateSearch() {
         if (pokenameLowerCase.includes(valueLowerCase) || pokeid.includes(value) || (i + 1).toString().includes(value)) {
             include = true;
         }
+		
+		for (var j = 0; j < datanames.length; j++){
+			if (items[i][datanames[j]].toLowerCase().includes(valueLowerCase)){
+				include = true;
+			}
+		}
 
         for (var alias in aliases) {
+            if (alias.includes(value) && pokeid == aliases[alias]) {
+                include = true;
+            }
+        }
+		
+		for (var alias in aliases) {
+            if (alias.includes(value) && pokeid == aliases[alias]) {
+                include = true;
+            }
+        }
+		
+		for (var alias in aliases) {
             if (alias.includes(value) && pokeid == aliases[alias]) {
                 include = true;
             }

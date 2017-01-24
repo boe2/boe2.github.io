@@ -8,6 +8,6 @@ var formatinfodict = {
 	"sm_202_0": "SM Season 2 - All",
 	"sm_202_1": "SM Season 2 - Singles",
 	"sm_202_2": "SM Season 2 - Doubles",
-	"sm_202_3": "SM Season 2 - Championships (VGC)",
-	"sm_202_4": "SM Season 2 - Special"
+	"sm_202_5": "SM Season 2 - Special - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/battle/202/regulation/\"> info about this season's special ladder</a>",
+	"sm_202_6": "SM Season 2 - Championships (VGC/WCS)"
 }
