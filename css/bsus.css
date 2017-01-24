@@ -136,6 +136,10 @@ body {
     margin-left: -60px;
     font-size: 13px;
 }
+.about:hover .credits {
+    visibility: visible;
+    opacity: 0.85;
+}
 #leftswablu {
     position: absolute;
     right: 37%;
@@ -144,7 +148,23 @@ body {
     position: absolute;
     left: 37%;
 }
-.about:hover .credits {
+.aboutsearch {
+    text-align: right;
+    border-bottom: 1px dotted black;
+}
+.aboutsearch .searchinfo {
+    visibility: hidden;
+    background-color: #498FAC;
+    color: white;
+    text-align: center;
+    position: absolute;
+	left: 26.5%;
+    margin-left: -60px;
+    font-size: 13px;
+	z-index: 3;
+    padding: 4px;
+}
+.aboutsearch:hover .searchinfo {
     visibility: visible;
     opacity: 0.85;
 }
@@ -247,4 +267,8 @@ select option:disabled {
 }
 #link {
 	color: white;
+}
+.typeimage {
+	position: relative;
+	top: 4px;
 }

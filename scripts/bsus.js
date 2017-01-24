@@ -12,7 +12,7 @@ var tabnum = 44;
 
 var tabnames = ["Moves", "Items", "Abilities", "Natures", "Moves when victorious", "Opponents when victorious", "Moves when defeated", "Opponents when defeated", "Teammates"];
 var tabnums = [44, 4, 84, 90, 130, 170, 190, 230, 250];
-var datanames = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 84, 86, 88];
+var datanames = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 84, 86, 88];
 
 
 function createButtons() {
@@ -79,12 +79,12 @@ function setData(number) {
     mon = number;
 
     var type;
-    type = items[number][2] + "/" + items[number][3];
+    type = "<img class=\"typeimage\" src=\"images\\" + items[number][2].toLowerCase() + ".png\"><img class=\"typeimage\" src=\"images\\" + items[number][3].toLowerCase() + "\.png\">";
     if (items[number]["3"] == "null") {
-        type = items[number][2];
+		type = "<img class=\"typeimage\" src=\"images\\" + items[number][2].toLowerCase() + ".png\">";
     }
     pokedexNo = items[number][0].substring(0, items[number][0].length - 2);
-    document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + dict[items[number][0]] + " - " + type + " type" + " - Estimated usage: " + Math.round(items[number][items[number].length - 1] / totalusage * 600000) / 1000 + "%";
+    document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + dict[items[number][0]] + " - " + type + " - Estimated usage: " + Math.round(items[number][items[number].length - 1] / totalusage * 600000) / 1000 + "%";
     if (tab == 0 || tab == 1 || tab == 2 || tab == 3 || tab == 4 || tab == 6) {
         var totalperc = 0;
         var stop = 20;
