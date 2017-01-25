@@ -212,9 +212,11 @@ function resetData(number, resetsearch) {
 }
 
 function updateSearch() {
+	
+	var value = document.getElementById("searchbox").value;
 
-    var value = document.getElementById("searchbox").value;
-
+	console.log(items.length);
+	
     for (var i = 0; i < items.length; i++) {
 
         try {
@@ -224,8 +226,8 @@ function updateSearch() {
             console.log(i);
         }
         if (pokename != null) {
-            valueLowerCase = value.toLowerCase();
-            pokenameLowerCase = pokename.toLowerCase();
+            var valueLowerCase = value.toLowerCase();
+            var pokenameLowerCase = pokename.toLowerCase();
         }
 
         var include = false;
@@ -235,11 +237,16 @@ function updateSearch() {
         }
 		
 		for (var j = 0; j < datanames.length; j++){
-			if (items[i][datanames[j]].toLowerCase().includes(valueLowerCase)){
-				include = true;
+			try {
+				if (items[i][datanames[j]].toLowerCase().includes(valueLowerCase)){
+					include = true;
+				}
+			}catch (e){
+				
 			}
+			
 		}
-
+		
         for (var alias in aliases) {
             if (alias.includes(value) && pokeid == aliases[alias]) {
                 include = true;
