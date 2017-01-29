@@ -61,6 +61,21 @@
                 <option value="oras_117_4">
                     ORAS Season 17 - Rotations
                 </option>
+                <option disabled value="#">
+                    Pokemon Showdown Ladders
+                </option>
+                <option value="ps_gen7battlespotsingles_0_12_16">
+                    PS Gen 7 BSS December 2016 (Rating: 0)
+                </option>
+                <option value="ps_gen7battlespotsingles_1500_12_16">
+                    PS Gen 7 BSS December 2016 (Rating: 1500)
+                </option>
+                <option value="ps_gen7battlespotsingles_1630_12_16">
+                    PS Gen 7 BSS December 2016 (Rating: 1630)
+                </option>
+                <option value="ps_gen7battlespotsingles_1760_12_16">
+                    PS Gen 7 BSS December 2016 (Rating: 1760)
+                </option>
             </select>
             <button onclick="resetData(0, true)" type="button2">Show stats!</button>
             <p id="formatinfo"> Selected format: </p>
@@ -84,15 +99,7 @@
     <div id="right">
         <div id="rightcontent">
             <div id="tabs"><span id="tabsspan">
-               <span id="tabbutton0" class="coloredbutton" onclick="setTab(0)">Moves</span> |
-                <span id="tabbutton1" class="coloredbutton" onclick="setTab(1)">Items</span> |
-                <span id="tabbutton2" class="coloredbutton" onclick="setTab(2)">Abilities</span> |
-                <span id="tabbutton3" class="coloredbutton" onclick="setTab(3)">Natures</span> |
-                <span id="tabbutton4" class="coloredbutton" onclick="setTab(4)">Moves when victorious</span> |
-                <span id="tabbutton5" class="coloredbutton" onclick="setTab(5)">Opponents when victorious</span> |
-                <span id="tabbutton6" class="coloredbutton" onclick="setTab(6)">Moves when defeated</span> |
-                <span id="tabbutton7" class="coloredbutton" onclick="setTab(7)">Opponents when defeated</span> |
-                <span id="tabbutton8" class="coloredbutton" onclick="setTab(8)">Teammates</span></span>
+				<div id="psnotabs"> </div>
             </div>
             <div id="monsinfo">
                 <p id="monsinfo2"> </p>
@@ -226,7 +233,11 @@
     <script src="data/202_1.js"></script>
     <script src="data/202_2.js"></script>
     <script src="data/202_5.js"></script>
-    <script src="data/202_6.js"></script>
+    <script src="data/202_6.js"></script>	
+    <script src="data/ps_gen7battlespotsingles_0_12_16.js"></script>
+    <script src="data/ps_gen7battlespotsingles_1500_12_16.js"></script>
+    <script src="data/ps_gen7battlespotsingles_1630_12_16.js"></script>
+    <script src="data/ps_gen7battlespotsingles_1760_12_16.js"></script>
     <script src="scripts/bsus.js"></script>
 </body>
 

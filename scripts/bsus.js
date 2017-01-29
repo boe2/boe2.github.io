@@ -14,6 +14,8 @@ var tabnames = ["Moves", "Items", "Abilities", "Natures", "Moves when victorious
 var tabnums = [44, 4, 84, 90, 130, 170, 190, 230, 250];
 var datanames = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 84, 86, 88];
 
+var ps = false;
+
 
 function createButtons() {
 
@@ -24,7 +26,11 @@ function createButtons() {
 
             var pokedexNo;
 
-            name = dict[items[i][0]];
+			if (ps){
+				name = items[i][1];
+			} else {
+				name = dict[items[i][0]];
+			}           
 
             if (name.substring(name.length - 6) == "-Alola") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
@@ -84,7 +90,12 @@ function setData(number) {
 		type = "<img class=\"typeimage\" src=\"images\\" + items[number][2].toLowerCase() + ".png\">";
     }
     pokedexNo = items[number][0].substring(0, items[number][0].length - 2);
-    document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + dict[items[number][0]] + " - " + type + " - Estimated usage: " + Math.round(items[number][items[number].length - 1] / totalusage * 600000) / 1000 + "%";
+	
+	if (!ps){
+		document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + items[number][1] + " - " + type + " - Estimated usage: " + Math.round(items[number][items[number].length - 1] / totalusage * 600000) / 1000 + "%";
+	}else{
+		document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + items[number][1] + " - " + type + " - Usage: " + Math.round(items[number][items[number].length-1] * 100000) / 1000 + "%";
+	}
     if (tab == 0 || tab == 1 || tab == 2 || tab == 3 || tab == 4 || tab == 6) {
         var totalperc = 0;
         var stop = 20;
@@ -181,7 +192,9 @@ function setTab(number) {
 
     for (var i = 0; i < 9; i++) {
         buttonname = "tabbutton" + i.toString();
-        document.getElementById(buttonname).className = "coloredbutton";
+		if (!(i == 4 || i == 5 || i == 6 || i == 7 || i == 8 && ps)){
+			document.getElementById(buttonname).className = "coloredbutton";
+		}
 
     }
 
@@ -192,7 +205,6 @@ function setTab(number) {
 
     setData(mon);
 }
-
 function resetData(number, resetsearch) {
 
     if (resetsearch == true) {
@@ -202,6 +214,19 @@ function resetData(number, resetsearch) {
     document.getElementById("buttonlist").innerHTML = "";
 
     var value = select.options[select.selectedIndex].value;
+	
+	if (value.substring(0,2) == "ps"){
+		ps = true;
+		document.getElementById("psnotabs").innerHTML = "<span id=\"tabbutton0\" class=\"coloredbutton\" onclick=\"setTab(0)\">Moves</span> | <span id=\"tabbutton1\" class=\"coloredbutton\" onclick=\"setTab(1)\">Items</span> | <span id=\"tabbutton2\" class=\"coloredbutton\" onclick=\"setTab(2)\">Abilities</span> | <span id=\"tabbutton3\" class=\"coloredbutton\" onclick=\"setTab(3)\">Natures</span>";
+		
+		document.getElementById("tabbutton3").innerHTML = "Spreads";
+	}else{
+		ps = false;
+		document.getElementById("psnotabs").innerHTML = "<span id=\"tabbutton0\" class=\"coloredbutton\" onclick=\"setTab(0)\">Moves</span> | <span id=\"tabbutton1\" class=\"coloredbutton\" onclick=\"setTab(1)\">Items</span> | <span id=\"tabbutton2\" class=\"coloredbutton\" onclick=\"setTab(2)\">Abilities</span> | <span id=\"tabbutton3\" class=\"coloredbutton\" onclick=\"setTab(3)\">Natures</span> | <span id=\"tabbutton4\" class=\"coloredbutton\" onclick=\"setTab(4)\">Moves when victorious</span> | <span id=\"tabbutton5\" class=\"coloredbutton\" onclick=\"setTab(5)\">Opponents when victorious</span> | <span id=\"tabbutton6\" class=\"coloredbutton\" onclick=\"setTab(6)\">Moves when defeated</span> | <span id=\"tabbutton7\" class=\"coloredbutton\" onclick=\"setTab(7)\">Opponents when defeated</span> | <span id=\"tabbutton8\" class=\"coloredbutton\" onclick=\"setTab(8)\">Teammates</span></span>";
+		
+		document.getElementById("tabbutton3").innerHTML = "Natures";
+	}
+			
     updateFormatInfo(value);
     mon = number;
     setTab(0);
@@ -214,8 +239,6 @@ function resetData(number, resetsearch) {
 function updateSearch() {
 	
 	var value = document.getElementById("searchbox").value;
-
-	console.log(items.length);
 	
     for (var i = 0; i < items.length; i++) {
 
@@ -223,7 +246,6 @@ function updateSearch() {
             pokename = dict[items[i][0]];
             pokeid = items[i][0];
         } catch (e) {
-            console.log(i);
         }
         if (pokename != null) {
             var valueLowerCase = value.toLowerCase();

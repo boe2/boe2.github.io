@@ -9,5 +9,9 @@ var formatinfodict = {
 	"sm_202_1": "SM Season 2 - Singles",
 	"sm_202_2": "SM Season 2 - Doubles",
 	"sm_202_5": "SM Season 2 - Special - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/battle/202/regulation/\"> info about this season's special ladder</a>",
-	"sm_202_6": "SM Season 2 - Championships (VGC/WCS)"
+	"sm_202_6": "SM Season 2 - Championships (VGC/WCS)",
+	"ps_gen7battlespotsingles_0_12_16": "Pokemon Showdown Gen 7 BSS stats for december 2016 and Glicko rating 0 - NOTE: this is still in beta!",
+	"ps_gen7battlespotsingles_1500_12_16": "Pokemon Showdown Gen 7 BSS stats for december 2016 and Glicko rating 1500 - NOTE: this is still in beta!",
+	"ps_gen7battlespotsingles_1630_12_16": "Pokemon Showdown Gen 7 BSS stats for december 2016 and Glicko rating 1630 - NOTE: this is still in beta!",
+	"ps_gen7battlespotsingles_1760_12_16": "Pokemon Showdown Gen 7 BSS stats for december 2016 and Glicko rating 1760 - NOTE: this is still in beta!"
 }
