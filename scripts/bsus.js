@@ -201,6 +201,9 @@ function setTab(number) {
     buttonname = "tabbutton" + tab.toString();
     tabnum = tabnums[tab];
     document.getElementById("tabnamespan").innerHTML = tabnames[tab];
+	if (document.getElementById("tabnamespan").innerHTML == "Natures" && ps){
+		document.getElementById("tabnamespan").innerHTML = "Spreads";
+	}
     document.getElementById(buttonname).className = "coloredclickedbutton";
 
     setData(mon);
