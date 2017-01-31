@@ -192,10 +192,13 @@ function setTab(number) {
 
     for (var i = 0; i < 9; i++) {
         buttonname = "tabbutton" + i.toString();
-		if (!(i == 4 || i == 5 || i == 6 || i == 7 || i == 8 && ps)){
+		if (ps){
+			if (!(i == 4 || i == 5 || i == 6 || i == 7 || i == 8)){				
+				document.getElementById(buttonname).className = "coloredbutton";
+			}
+		}else{
 			document.getElementById(buttonname).className = "coloredbutton";
 		}
-
     }
 
     buttonname = "tabbutton" + tab.toString();
