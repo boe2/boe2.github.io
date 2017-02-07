@@ -1,4 +1,4 @@
-var dict = {
+﻿var dict = {
 	"773-1": "Silvally-Fighting",
 	"773-2": "Silvally-Flying",
 	"773-3": "Silvally-Poison",
@@ -724,11 +724,11 @@ var dict = {
 	"638-0": "Cobalion",
 	"639-0": "Terrakion",
 	"640-0": "Virizion",
-	"641-0": "Tornadus-I",
-	"642-0": "Thundurus-I",
+	"641-0": "Tornadus",
+	"642-0": "Thundurus",
 	"643-0": "Reshiram",
 	"644-0": "Zekrom",
-	"645-0": "Landorus-I",
+	"645-0": "Landorus",
 	"646-0": "Kyurem",
 	"647-0": "Keldeo",
 	"648-0": "Meloetta",
