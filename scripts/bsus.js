@@ -113,7 +113,7 @@ function setData(number) {
             var name = dict[id];
             document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = name;
 			
-			var text = "<div onClick=\"lookForMon(\'" + name + "\')\"> click here to view this Pokemon's stats</div>";
+			var text = "<div onClick=\"lookForMon(\'" + name + "\'); emptysearch();\"> click here to view this Pokemon's stats</div>";
             document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = text;
         }
     }
