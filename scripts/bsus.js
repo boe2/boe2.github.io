@@ -112,7 +112,9 @@ function setData(number) {
             var id = items[number][tabnum + i];
             var name = dict[id];
             document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = name;
-            document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = "";
+			
+			var text = "<div onClick=\"lookForMon(\'" + name + "\')\"> click here to view this Pokemon's stats</div>";
+            document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = text;
         }
     }
 
@@ -160,7 +162,7 @@ function setData(number) {
     }
 
     var total = 400;
-    if (tab == 4 || tab == 3) {
+    if (tab == 4 || tab == 3 || tab == 1) {
         total = 100;
     }
 
@@ -238,13 +240,24 @@ function resetData(number, resetsearch) {
     setTab(0);
     createButtons();
     setData(mon);
-    updateSearch();
+    updateSearch(false);
 
 }
 
-function updateSearch() {
+function updateSearch(cleared) {
 	
 	var value = document.getElementById("searchbox").value;
+	
+	if (cleared){
+		value = "";
+		document.getElementById("searchbox").value = "";
+	}
+	
+	if (value == ""){
+		document.getElementById("searchtext").innerHTML = "Search: <span class=\"searchinfo\">Enter a Pokemon's name to find stats for that specific Pokemon, or type a move, item or ability to find stats for Pokemon which commonly have that move, item or ability!</span>";
+	}else{
+		document.getElementById("searchtext").innerHTML = "<div style=\"padding:0px 7px 0px 7px\"><button onClick=(emptysearch())>Clear</button></div>";
+	}
 	
     for (var i = 0; i < items.length; i++) {
 
@@ -299,7 +312,7 @@ function updateSearch() {
             } catch (e) {
 
             }
-        } else if (include == true && document.getElementById("button" + i.toString()) != null) {
+        } else if (include == true && document.getElementById("buttonbutton" + i.toString()) != null) {
             document.getElementById("button" + i.toString()).style.display = "block";
         }
 
@@ -313,6 +326,36 @@ function updateFormatInfo(format) {
     totalusage = window[format + "_totalusage"];
     formatinfo = formatinfodict[format];
     document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
+}
+
+function lookForMon (name){
+	if (name.includes("-Mega-Y") || name.includes("-Mega-X")){
+		name = name.substring(0, name.length-7);
+	}
+	if (name.includes("-Mega") || name.includes("-Mega")){
+		name = name.substring(0, name.length-5);
+	}
+	
+	for (var i = 0; i < items.length - 2; i++){
+		try {
+			var buttonhtml = document.getElementById("button" + i.toString()).innerHTML;	
+			if (buttonhtml.includes(name)){			
+				setTab(0);
+				setData(i);
+				document.getElementById("button" + i.toString()).className = "clickedbutton";		
+			}else{	
+				document.getElementById("button" + i.toString()).className = "button";
+			}
+		}catch (err){
+			var buttonhtml = null;
+		}	
+	}
+}
+
+function emptysearch(){
+	updateSearch(true);
+	document.getElementById("buttonlist").innerHTML = "";
+	createButtons();
 }
 
 resetData(0);
