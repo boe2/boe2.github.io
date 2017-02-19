@@ -254,9 +254,9 @@ function updateSearch(cleared) {
 	}
 	
 	if (value == ""){
-		document.getElementById("searchtext").innerHTML = "Search: <span class=\"searchinfo\">Enter a Pokemon's name to find stats for that specific Pokemon, or type a move, item or ability to find stats for Pokemon which commonly have that move, item or ability!</span>";
+		document.getElementById("searchtext").innerHTML = "Search:";
 	}else{
-		document.getElementById("searchtext").innerHTML = "<div style=\"padding:0px 7px 0px 7px\"><button onClick=(emptysearch())>Clear</button></div>";
+		document.getElementById("searchtext").innerHTML = "<div style=\"padding:0px 1px 0px 2px\"><button onClick=(emptysearch())>Clear</button></div>";
 	}
 	
     for (var i = 0; i < items.length; i++) {
