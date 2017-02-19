@@ -245,6 +245,8 @@ function resetData(number, resetsearch) {
 }
 
 function updateSearch(cleared) {
+	document.getElementById("buttonlist").innerHTML = "";
+	createButtons();
 	
 	var value = document.getElementById("searchbox").value;
 	
@@ -354,8 +356,6 @@ function lookForMon (name){
 
 function emptysearch(){
 	updateSearch(true);
-	document.getElementById("buttonlist").innerHTML = "";
-	createButtons();
 }
 
 resetData(0);
