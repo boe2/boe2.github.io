@@ -110,12 +110,17 @@ function setData(number) {
 
     if (tab == 5 || tab == 7 || tab == 8) {
         for (i = 0; i < 20; i++) {
-            var id = items[number][tabnum + i];
-            var name = dict[id];
-			
-			var text = "<div onClick=\"lookForMon(\'" + name + "\'); emptysearch();\">" + name + "</div>";
-            document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = text;
-            document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = "";
+			var id = items[number][tabnum + i];
+			var name = dict[id];
+			if (name != undefined){
+				
+				var text = "<div onClick=\"lookForMon(\'" + name + "\'); emptysearch();\">" + name + "</div>";
+				document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = text;
+				document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = "";
+			}else{				
+				document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = "";
+				document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = "";
+			}
         }
     }
 
@@ -124,12 +129,6 @@ function setData(number) {
             document.getElementById("td" + ((i + 1) * 3).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
-        }
-    }
-
-    for (i = 0; i < 20; i++) {
-        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML != "" && tab != 2) {
-            document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "#" + (i + 1);
         }
     }
 
@@ -147,16 +146,6 @@ function setData(number) {
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
         }
     }
-	if (document.getElementById("td1").innerHTML == "" && tab == 1) {
-		document.getElementById("noitems").innerHTML = "Held item data for this Pokemon is unavailable, presumably because this Pokemon has not used any held items, or because the competition/ladder didn't allow the use of held items.";
-
-		document.getElementById("td62").innerHTML = "";
-		document.getElementById("td63").innerHTML = "";
-	}else if (tab == 5 || tab == 7 || tab == 8){
-		document.getElementById("noitems").innerHTML = "Note: click on a Pokemon's name to view its stats.";
-	}else{
-		document.getElementById("noitems").innerHTML = "";
-	}
     
 
     var total = 400;
@@ -181,8 +170,31 @@ function setData(number) {
     if (tab == 2 || tab == 5 || tab == 7 || tab == 8) {
         document.getElementById("td62").innerHTML = "";
         document.getElementById("td63").innerHTML = "";
-    }
+    }		
 
+    for (i = 0; i < 20; i++) {
+        document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";        
+        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML != "" && tab != 2) {
+            document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "#" + (i + 1);
+        }
+    }
+	
+	if (document.getElementById("td1").innerHTML == "" && tab == 1) {
+		document.getElementById("noitems").innerHTML = "Held item data for this Pokemon is unavailable, presumably because this Pokemon has not used any held items, or because the competition/ladder didn't allow the use of held items.";
+
+		document.getElementById("td62").innerHTML = "";
+		document.getElementById("td63").innerHTML = "";
+	}else if (tab == 5 || tab == 7 || tab == 8 && document.getElementById("td2").innerHTML != ""){
+		document.getElementById("noitems").innerHTML = "Note: click on a Pokemon's name to view its stats.";
+	}else {
+		document.getElementById("noitems").innerHTML = "";
+	}
+	if (tab == 4 || tab == 5 && document.getElementById("td2").innerHTML == ""){
+		document.getElementById("noitems").innerHTML = "This Pokemon does not appear to be particularly successful in battling...";		
+	}
+	if (tab == 6 || tab == 7 && document.getElementById("td2").innerHTML == ""){
+		document.getElementById("noitems").innerHTML = "This Pokemon has never been defeated.";		
+	}
 
 }
 
