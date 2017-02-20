@@ -20,8 +20,7 @@ var ps = false;
 function createButtons() {
 
     for (i = 0; i < items.length; i++) {
-        if (items[i] != undefined) {
-
+        try{
             var div = document.createElement("div");
 
             var pokedexNo;
@@ -75,7 +74,9 @@ function createButtons() {
                 document.getElementById("buttonlist").appendChild(div);
 
             }
-        }
+        }catch (err){
+			
+		}
     }
 }
 
@@ -111,15 +112,15 @@ function setData(number) {
         for (i = 0; i < 20; i++) {
             var id = items[number][tabnum + i];
             var name = dict[id];
-            document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = name;
 			
-			var text = "<div onClick=\"lookForMon(\'" + name + "\'); emptysearch();\"> click here to view this Pokemon's stats</div>";
-            document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = text;
+			var text = "<div onClick=\"lookForMon(\'" + name + "\'); emptysearch();\">" + name + "</div>";
+            document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = text;
+            document.getElementById("td" + (3 * (i + 1)).toString()).innerHTML = "";
         }
     }
 
     for (i = 0; i < 20; i++) {
-        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML == "null") {
+        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML == "null" && tab != 2) {
             document.getElementById("td" + ((i + 1) * 3).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
@@ -127,39 +128,36 @@ function setData(number) {
     }
 
     for (i = 0; i < 20; i++) {
-        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML == "undefined") {
-            document.getElementById("td" + ((i + 1) * 3).toString()).innerHTML = "";
-            document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML = "";
-            document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
-        }
-    }
-
-    for (i = 0; i < 20; i++) {
-        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML != "") {
+        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML != "" && tab != 2) {
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "#" + (i + 1);
         }
     }
 
     if (tab == 2) {
-        for (i = 3; i < 20; i++) {
+		var j = 3;
+		if (document.getElementById("td8").innerHTML == "null"){
+			j = 2;
+		}
+		if (document.getElementById("td5").innerHTML == "null"){
+			j = 1;
+		}
+        for (i = j; i < 20; i++) {
             document.getElementById("td" + ((i + 1) * 3).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
         }
     }
+	if (document.getElementById("td1").innerHTML == "" && tab == 1) {
+		document.getElementById("noitems").innerHTML = "Held item data for this Pokemon is unavailable, presumably because this Pokemon has not used any held items, or because the competition/ladder didn't allow the use of held items.";
 
-    if (tab == 1) {
-        if (document.getElementById("td1").innerHTML == "") {
-            document.getElementById("noitems").innerHTML = "Held item data for this Pokemon is unavailable, presumably because this Pokemon has not used any held items, or because the competition/ladder didn't allow the use of held items.";
-
-            document.getElementById("td62").innerHTML = "";
-            document.getElementById("td63").innerHTML = "";
-        }
-    }
-
-    if (tab != 1) {
-        document.getElementById("noitems").innerHTML = "";
-    }
+		document.getElementById("td62").innerHTML = "";
+		document.getElementById("td63").innerHTML = "";
+	}else if (tab == 5 || tab == 7 || tab == 8){
+		document.getElementById("noitems").innerHTML = "Note: click on a Pokemon's name to view its stats.";
+	}else{
+		document.getElementById("noitems").innerHTML = "";
+	}
+    
 
     var total = 400;
     if (tab == 4 || tab == 3 || tab == 1) {
@@ -215,12 +213,6 @@ function setTab(number) {
 }
 function resetData(number, resetsearch) {
 
-    if (resetsearch == true) {
-        document.getElementById("searchbox").value = "";
-    }
-
-    document.getElementById("buttonlist").innerHTML = "";
-
     var value = select.options[select.selectedIndex].value;
 	
 	if (value.substring(0,2) == "ps"){
@@ -238,7 +230,6 @@ function resetData(number, resetsearch) {
     updateFormatInfo(value);
     mon = number;
     setTab(0);
-    createButtons();
     setData(mon);
     updateSearch(false);
 
