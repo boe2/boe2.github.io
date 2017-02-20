@@ -174,7 +174,7 @@ function setData(number) {
 
     for (i = 0; i < 20; i++) {
         document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";        
-        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML != "" && tab != 2) {
+        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML != "") {
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "#" + (i + 1);
         }
     }
