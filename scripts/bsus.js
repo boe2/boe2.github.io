@@ -188,7 +188,7 @@ function setData(number) {
 		document.getElementById("noitems").innerHTML = "Note: click on a Pokemon's name to view its stats.";
 	}else if (tab == 4 || tab == 5){
 		if (document.getElementById("td2").innerHTML == ""){
-			document.getElementById("noitems").innerHTML = "This Pokemon does not appear to be particularly succesful in battles...";
+			document.getElementById("noitems").innerHTML = "This Pokemon does not appear to be particularly successful in battles...";
 		}		
 	}else{
 		document.getElementById("noitems").innerHTML = "";
