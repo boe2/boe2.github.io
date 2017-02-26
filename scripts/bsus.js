@@ -86,7 +86,11 @@ function setData(number) {
     mon = number;
 
     var type;
-    type = "<img class=\"typeimage\" src=\"images\\" + items[number][2].toLowerCase() + ".png\"><img class=\"typeimage\" src=\"images\\" + items[number][3].toLowerCase() + "\.png\">";
+	try{
+		type = "<img class=\"typeimage\" src=\"images\\" + items[number][2].toLowerCase() + ".png\"><img class=\"typeimage\" src=\"images\\" + items[number][3].toLowerCase() + "\.png\">";
+	}catch(err){
+		
+	}
     if (items[number]["3"] == "null") {
 		type = "<img class=\"typeimage\" src=\"images\\" + items[number][2].toLowerCase() + ".png\">";
     }
@@ -146,15 +150,15 @@ function setData(number) {
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
         }
     }
-    
-
+	
     var total = 400;
-    if (tab == 4 || tab == 3 || tab == 1) {
+	
+    if (tab == 4 || tab == 3 || tab == 1 || tab == 6) {
         total = 100;
     }
 
     var other = total - totalperc;
-    if (tab == 2 || tab == 6) {
+    if (tab == 2) {
         other = 0;
     }
 
@@ -188,7 +192,7 @@ function setData(number) {
 		document.getElementById("noitems").innerHTML = "Note: click on a Pokemon's name to view its stats.";
 	}else if (tab == 4 || tab == 5){
 		if (document.getElementById("td2").innerHTML == ""){
-			document.getElementById("noitems").innerHTML = "This Pokemon does not appear to be particularly succesful in battles...";
+			document.getElementById("noitems").innerHTML = "This Pokemon does not appear to be particularly successful in battles...";
 		}		
 	}else{
 		document.getElementById("noitems").innerHTML = "";
