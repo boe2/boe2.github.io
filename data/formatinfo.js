@@ -15,5 +15,5 @@ var formatinfodict = {
 	"sm_202_6": "SM Season 2 - Championships (VGC/WCS)",
 	"ps_gen7battlespotsingles_1630_12_16": "PS! Gen 7 BSS stats for December 2016 and rating 1630 - NOTE: these are pre-bank stats",
 	"ps_gen7battlespotsingles_1630_1_17": "PS! Gen 7 BSS stats for January 2017 and rating 1630 - NOTE: these stats are a combination of post- and pre-bank stats!",
-	"ps_gen7battlespotsingles_1630_1_17": "PS! Gen 7 BSS stats for February 2017 and rating 1630"
+	"ps_gen7battlespotsingles_1630_2_17": "PS! Gen 7 BSS stats for February 2017 and rating 1630"
 }
