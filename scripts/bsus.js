@@ -283,35 +283,6 @@ function updateSearch(cleared) {
         if (pokenameLowerCase.includes(valueLowerCase) || pokeid.includes(value) || (i + 1).toString().includes(value)) {
             include = true;
         }
-		
-		for (var j = 0; j < datanames.length; j++){
-			try {
-				if (items[i][datanames[j]].toLowerCase().includes(valueLowerCase)){
-					include = true;
-				}
-			}catch (e){
-				
-			}
-			
-		}
-		
-        for (var alias in aliases) {
-            if (alias.includes(value) && pokeid == aliases[alias]) {
-                include = true;
-            }
-        }
-		
-		for (var alias in aliases) {
-            if (alias.includes(value) && pokeid == aliases[alias]) {
-                include = true;
-            }
-        }
-		
-		for (var alias in aliases) {
-            if (alias.includes(value) && pokeid == aliases[alias]) {
-                include = true;
-            }
-        }
 
         if (include == false) {
             try {
