@@ -283,6 +283,16 @@ function updateSearch(cleared) {
         if (pokenameLowerCase.includes(valueLowerCase) || pokeid.includes(value) || (i + 1).toString().includes(value)) {
             include = true;
         }
+		
+		for (var j = 0; j < datanames.length; j++){
+			try {
+				if (items[i][datanames[j]].toLowerCase().includes(valueLowerCase)){
+					include = true;
+				}
+			}catch (e){
+				
+			}			
+		}
 
         if (include == false) {
             try {
