@@ -18,6 +18,11 @@ var formatinfodict = {
 	"sm_203_2": "SM Season 3 - Doubles",
 	"sm_203_5": "SM Season 3 - Special - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/battle/203/regulation/\"> info about this season's special ladder</a>",
 	"sm_203_6": "SM Season 3 - Championships (VGC/WCS)",
+	"sm_204_0": "SM Season 4 - All",
+	"sm_204_1": "SM Season 4 - Singles",
+	"sm_204_2": "SM Season 4 - Doubles",
+	"sm_204_5": "SM Season 4 - Special - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/battle/204/regulation/\"> info about this season's special ladder</a>",
+	"sm_204_6": "SM Season 4 - Championships (VGC/WCS)",
 	"ps_gen7battlespotsingles_1630_12_16": "PS! Gen 7 BSS stats for December 2016 and rating 1630 - NOTE: these are pre-bank stats",
 	"ps_gen7battlespotsingles_1630_1_17": "PS! Gen 7 BSS stats for January 2017 and rating 1630 - NOTE: these stats are a combination of post- and pre-bank stats!",
 	"ps_gen7battlespotsingles_1630_1_17": "PS! Gen 7 BSS stats for February 2017 and rating 1630"
