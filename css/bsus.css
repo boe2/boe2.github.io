@@ -132,8 +132,8 @@ body {
     text-align: center;
     padding: 5px;
     position: absolute;
-    bottom: -1190%;
-    left: -247%;
+	right:-10px;
+	top:22px;
     margin-left: -60px;
     font-size: 13px;
 }
@@ -205,6 +205,7 @@ body {
     margin-left: 4px;
     height: 30px;
     cursor: pointer;
+	overflow: hidden;
 }
 .button:hover {
     background-color: #A2D8D1;
@@ -231,6 +232,7 @@ body {
     border-bottom-width: 0px;
     border-radius: 0px;
     height: 30px;
+	overflow: hidden;
 }
 .tab {
     border: 1px solid #A2D8D1;
@@ -272,4 +274,8 @@ select option:disabled {
 .typeimage {
 	position: relative;
 	top: 4px;
+}
+
+#languagelink {
+    color: white;
 }
