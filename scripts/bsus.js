@@ -259,7 +259,7 @@ function setData(number) {
 		document.getElementById("td63").innerHTML = "";
 	}else if (tab == 5 || tab == 7 || tab == 8 && document.getElementById("td2").innerHTML != ""){
 		if (japanese){			
-			document.getElementById("noitems").innerHTML = "注記：ポケモンの使用率を見たいと、名前をクリックしてください";
+			document.getElementById("noitems").innerHTML = "注記：ポケモンの使用率を見たいときは、名前をクリックしてください";
 		}
 		else{
 			document.getElementById("noitems").innerHTML = "Note: click on a Pokemon's name to view its stats.";
@@ -471,7 +471,7 @@ function passfilter(string){
 			string = string.substring(0, string.length-5);
 			mega = "メガ";
 		}
-		if (string.includes(" Type")){
+		if (string.includes(" Type") || string.includes(" Form")){
 			string = string.substring(0, string.length-5);
 		}
 	}
