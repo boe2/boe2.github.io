@@ -34,6 +34,8 @@ if (l == "?l=jp"){
 	formatinfodict = jpformatinfodict;
 	
 	var selector = document.getElementById("select").innerHTML;
+	selector = replaceAll(selector, "Current Season", "現在のシーズン");	
+	selector = replaceAll(selector, "Past Seasons", "前のシーズン");	
 	selector = replaceAll(selector, "Season", "シーズン");
 	selector = replaceAll(selector, "Singles", "シングル");
 	selector = replaceAll(selector, "Doubles", "ダブル");
