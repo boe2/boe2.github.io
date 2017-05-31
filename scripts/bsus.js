@@ -363,7 +363,7 @@ function updateSearch(cleared) {
 	}
 	
     for (var i = 0; i < items.length; i++) {
-
+	
         try {
             pokename = dict[items[i][0]];
 			jpname = passfilter(dict[items[i][0]]);
@@ -377,7 +377,7 @@ function updateSearch(cleared) {
 
         var include = false;
 
-        if (pokenameLowerCase.includes(valueLowerCase) || jpname.includes(valueLowerCase) || pokeid.includes(value) || (i + 1).toString().includes(value)) {
+        if (pokenameLowerCase.includes(valueLowerCase) || pokeid.includes(value) || (i + 1).toString().includes(value)) {
             include = true;
         }
 		
