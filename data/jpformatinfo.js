@@ -25,5 +25,6 @@ var jpformatinfodict = {
 	"sm_204_6": "SM シーズン 4 - ＷＣＳ",
 	"ps_gen7battlespotsingles_1630_12_16": "２０１６年１２月のPokemon ShowdownのBSS使用率",
 	"ps_gen7battlespotsingles_1630_1_17": "２０１７年１月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1630_2_17": "２０１７年２月のPokemon ShowdownのBSS使用率"
+	"ps_gen7battlespotsingles_1630_2_17": "２０１７年２月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_5_17": "２０１７年５月のPokemon ShowdownのBSS使用率"
 }
