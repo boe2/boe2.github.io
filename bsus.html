@@ -35,6 +35,21 @@
                     Season 4 - VGC
                 </option>
 				<option disabled value="#">
+                    Pokemon Showdown Ladders
+                </option>
+                <option value="ps_gen7battlespotsingles_1630_12_16">
+                    PS Gen 7 BSS December 2016 (Rating: 1630)
+                </option>
+                <option value="ps_gen7battlespotsingles_1630_1_17">
+                    PS Gen 7 BSS January 2017 (Rating: 1630)
+                </option>
+                <option value="ps_gen7battlespotsingles_1630_2_17">
+                    PS Gen 7 BSS February 2017 (Rating: 1630)
+                </option>
+                <option value="ps_gen7battlespotsingles_1630_5_17">
+                    PS Gen 7 BSS May 2017 (Rating: 1630)
+                </option>
+				<option disabled value="#">
                     Past Seasons
                 </option>
                 <option value="sm_202_0">
@@ -100,21 +115,6 @@
                 <option value="oras_117_4">
                     ORAS Season 17 - Rotations
                 </option>
-                <option disabled value="#">
-                    Pokemon Showdown Ladders
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_12_16">
-                    PS Gen 7 BSS December 2016 (Rating: 1630)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_1_17">
-                    PS Gen 7 BSS January 2017 (Rating: 1630)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_2_17">
-                    PS Gen 7 BSS February 2017 (Rating: 1630)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_5_17">
-                    PS Gen 7 BSS May 2017 (Rating: 1630)
-                </option>
             </select>
             <button id="showstats" onclick="resetData(0, true); emptysearch();" type="button2">Show stats!</button>
             <p id="formatinfo"> Selected format: </p>
@@ -131,18 +131,18 @@
                 <input id="searchbox" type="text" oninput="updateSearch(false)" value="">
             </div>
         </div>
-        <div id="border">
-        </div>
+        <div id="jpsearchresults"></div>
         <div id="buttonlist"></div>
     </div>
     <div id="right">
-        <div id="rightcontent">
+        <div id="rightcontentwithtabs">
             <div id="tabs"><span id="tabsspan">
 				<div id="psnotabs"> </div>
-            </div>
-            <div id="monsinfo">
-                <p id="monsinfo2"> </p>
-                <p id="tabname"><span id="tabnamespan"> </span>
+			</div>
+			<div id="rightcontent">            
+				<div id="monsinfo">
+					<p id="monsinfo2"> </p>
+					<p id="tabname"><span id="tabnamespan"> </span>
                 </p>
                 <p id="noitems"></p>
             </div>
@@ -255,8 +255,10 @@
             </table>
         </div>
     </div>
-    <div id="about" class="about"><div id="aboutpage">about this page</div>
-		<span id="credits" class="credits"><img id="leftswablu" src="images/swabluicon.png">by <strong>boe</strong><img id="rightswablu" src="images/swabluicon.png"><br><br>a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to<br><strong> Fischgrat</strong>, <strong>Lego</strong> and <strong>Alpha Ninja</strong> who helped out with programming<br> <strong>Yosshi</strong>, <strong>hz1016hz</strong> and the rest of the <a id="link" href="http://psim.us/jp">Japanese room on Pokemon Showdown</a> who helped out with translating<br> <strong>hetoord </strong> who made the original battlespotstats.com <br> <br> for questions, errors, or anything else, please contact me at boehijt@gmail.com or send me a message on <a id="link" href="http://www.smogon.com/forums/members/boehijt.228496/">Smogon</a> or Pokemon Showdown! <br> <br> <strong>Pokemon</strong> is © 1995-2017 <strong> Nintendo</strong></span>
+    </div>
+    <div id="about" class="about">
+        <div id="aboutpage">about this page</div>
+        <span id="credits" class="credits"><img id="leftswablu" src="images/swabluicon.png">by <strong>boe</strong><img id="rightswablu" src="images/swabluicon.png"><br><br>a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to<br><strong> Fischgrat</strong>, <strong>Lego</strong> and <strong>Alpha Ninja</strong> who helped out with programming<br> <strong>Yosshi</strong>, <strong>hz1016hz</strong> and the rest of the <a id="link" href="http://psim.us/jp">Japanese room on Pokemon Showdown</a> who helped out with translating<br> <strong>hetoord </strong> who made the original battlespotstats.com <br> <br> for questions, errors, or anything else, please contact me at boehijt@gmail.com or send me a message on <a id="link" href="http://www.smogon.com/forums/members/boehijt.228496/">Smogon</a> or Pokemon Showdown! <br> <br> <strong>Pokemon</strong> is © 1995-2017 <strong> Nintendo</strong></span>
     </div>
     <script src="data/dict.js"></script>
     <script src="data/aliases.js"></script>
@@ -275,17 +277,17 @@
     <script src="data/202_1.js"></script>
     <script src="data/202_2.js"></script>
     <script src="data/202_5.js"></script>
-    <script src="data/202_6.js"></script>	
+    <script src="data/202_6.js"></script>
     <script src="data/203_0.js"></script>
     <script src="data/203_1.js"></script>
     <script src="data/203_2.js"></script>
     <script src="data/203_5.js"></script>
-    <script src="data/203_6.js"></script>	
+    <script src="data/203_6.js"></script>
     <script src="data/204_0.js"></script>
     <script src="data/204_1.js"></script>
     <script src="data/204_2.js"></script>
     <script src="data/204_5.js"></script>
-    <script src="data/204_6.js"></script>	
+    <script src="data/204_6.js"></script>
     <script src="data/ps_gen7battlespotsingles_1630_12_16.js"></script>
     <script src="data/ps_gen7battlespotsingles_1630_1_17.js"></script>
     <script src="data/ps_gen7battlespotsingles_1630_2_17.js"></script>
