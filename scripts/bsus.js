@@ -401,9 +401,6 @@ function updateSearch(cleared) {
                 document.getElementById("jpsearchresults").innerHTML += jpdict[entry] + " - " + entry + "<br>";
             }
         }
-        if (cleared) {
-            document.getElementById("jpsearchresults").innerHTML += "<strong>NEW</strong>: From now on, you can search Japanese names of item, nature, abilities etc. to find the English translation!";
-        }
     }
 }
 
