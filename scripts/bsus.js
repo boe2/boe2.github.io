@@ -20,10 +20,10 @@ var japanese = false;
 var l = location.search;
 
 if (l == "?l=jp") {
-    document.getElementById("title").innerHTML = "Battle Spot使用率";
+    document.getElementById("title").innerHTML = "ポケモンサン・ムーンBattle Spotレート使用率";
     document.getElementById("headertext").innerHTML = "Battle Spot使用率（ベータ） | <a href=\"https://boe2.github.io/bsus.html\" id=\"languagelink\"> English</a>";
     document.getElementById("aboutpage").innerHTML = "このページについて";
-    document.getElementById("credits").innerHTML = "<img id=\"leftswablu\" src=\"images/swabluicon.png\">製作者 <strong>boe</strong><img id=\"rightswablu\" src=\"images/swabluicon.png\"><br><br>ポケモンサン・ムーンのレートバトルとインターネット大会の完璧な使用率を表示できるページです。<br> 使用率はPokemon Global Linkから集められています。<br><br> このページを作るにあたってプログラミングを手伝ってくれた<strong>Fischgrat</strong>、<strong>Lego</strong>、<strong>Alpha Ninja</strong>、翻訳を手伝ってくれた<strong>Yosshi</strong>、<strong>hz1016hz</strong>、そして<a id=\"link\" href=\"http://psim.us/jp\">Pokemon Showdownの日本語部屋</a>の方々、そして元となるbattlespotstats.comの製作者<strong>hetoord</strong>に改めて感謝を。<br> <br> 問題があれば、 boehijt@gmail.comか<a id=\"link\" href=\"http://www.smogon.com/forums/members/boehijt.228496/\">Smogon</a>かPokemon Showdown!にお問い合わせください。<br> <br> <strong>Pokemon</strong> is © 1995-2017 <strong> Nintendo</strong>";
+    document.getElementById("credits").innerHTML = "<img id=\"leftswablu\" src=\"images/swabluicon.png\">製作者 <strong>boe</strong><img id=\"rightswablu\" src=\"images/swabluicon.png\"><br><br>ポケモンサン・ムーンのレートバトルとインターネット大会の完璧な使用率を表示できるページです。<br> 使用率はPokemon Global Linkから集められています。<br><br> このページを作るにあたってプログラミングを手伝ってくれた<strong>Fischgrat</strong>、<strong>Lego</strong>、<strong>Alpha Ninja</strong>、翻訳を手伝ってくれた<strong>Yosshi</strong>、<strong>hz1016hz</strong>、<strong>youmu@poke</strong>、そして元となるbattlespotstats.comの製作者<strong>hetoord</strong>に改めて感謝を。<br> <br> 問題があれば、 boehijt@gmail.comか<a id=\"link\" href=\"http://www.smogon.com/forums/members/boehijt.228496/\">Smogon</a>かPokemon Showdown!にお問い合わせください。<br> <br> <strong>Pokemon</strong> is © 1995-2017 <strong> Nintendo</strong>";
     tabnames = ["技", "持ち物", "特性", "性格", "倒した時の技", "倒した相手", "倒された時の技", "倒された相手", "チームメイト"];
     document.getElementById("pokemonbyranking").innerHTML = "ポケモンランキング";
     document.getElementById("showstats").innerHTML = "使用率表示";
