@@ -33,5 +33,6 @@ var jpformatinfodict = {
 	"ps_gen7battlespotsingles_1630_2_17": "２０１７年２月のPokemon ShowdownのBSS使用率",
 	"ps_gen7battlespotsingles_1630_5_17": "２０１７年５月のPokemon ShowdownのBSS使用率",
 	"ps_gen7battlespotsingles_1630_6_17": "２０１７年６月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1630_7_17": "２０１７年７月のPokemon ShowdownのBSS使用率"
+	"ps_gen7battlespotsingles_1630_7_17": "２０１７年７月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_8_17": "２０１７年８月のPokemon ShowdownのBSS使用率"
 }
