@@ -103,9 +103,9 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             } else if (englishname == "Lycanroc-Midnight") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-m";
-            } else if (englishname.includes("-T")) {
+            } else if (englishname.indexOf("-T") >= 0) {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";
-            } else if (englishname.includes("Silvally") && items[i][0].length == 6) {
+            } else if (englishname.indexOf("Silvally") >= 0 && items[i][0].length == 6) {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 3);
             } else {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
@@ -378,12 +378,12 @@ function updateSearch(cleared) {
             var data = items[i][datanames[j]];
 
             if (data != undefined && !japanese) {
-                if (data.toLowerCase().includes(value.toLowerCase())) {
+                if (data.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
                     include = true;
                 }
             }
             if (data != undefined && japanese) {
-                if (data.toLowerCase().includes(value.toLowerCase()) || passfilter(data).includes(value.toLowerCase())) {
+                if (data.toLowerCase().indexOf(value.toLowerCase()) >= 0 || passfilter(data).indexOf(value.toLowerCase()) >= 0) {
                     include = true;
                 }
             }
@@ -397,7 +397,7 @@ function updateSearch(cleared) {
 
     if (!japanese) {
         for (var entry in jpdict) {
-            if (jpdict[entry].includes(value) && value.length > 0) {
+            if (jpdict[entry].indexOf(value) >= 0 && value.length > 0) {
                 document.getElementById("jpsearchresults").innerHTML += jpdict[entry] + " - " + entry + "<br>";
             }
         }
@@ -419,23 +419,23 @@ function updateFormatInfo(format) {
 }
 
 function lookForMon(name) {
-    if (name.includes("-Mega-Y") || name.includes("-Mega-X")) {
+    if (name.indexOf("-Mega-Y") >= 0 || name.indexOf("-Mega-X") >= 0) {
         name = name.substring(0, name.length - 7);
     }
-    if (name.includes("-Mega")) {
+    if (name.indexOf("-Mega") >= 0) {
         name = name.substring(0, name.length - 5);
     }
-    if (name.includes("メガ")) {
+    if (name.indexOf("メガ") >= 0) {
         name = name.substring(2, name.length);
     }
-    if (name.includes("Ｙ") || name.includes("Ｘ")) {
+    if (name.indexOf("Ｙ") >= 0 || name.indexOf("Ｘ") >= 0) {
         name = name.substring(2, name.length - 1);
     }
 
     for (var i = 0; i < items.length - 2; i++) {
         try {
             var buttonhtml = document.getElementById("button" + i.toString()).innerHTML;
-            if (buttonhtml.includes(name)) {
+            if (buttonhtml.indexOf(name) >= 0) {
                 setTab(0);
                 setData(i);
                 document.getElementById("button" + i.toString()).className = "clickedbutton";
@@ -459,24 +459,24 @@ function passfilter(string) {
     var mega = "";
     var megaafter = "";
     if (japanese) {
-        if (string.includes(" Forme")) {
+        if (string.indexOf(" Forme") >= 0) {
             string = string.substring(0, string.length - 6);
         }
-        if (string.includes("-Mega-Y")) {
+        if (string.indexOf("-Mega-Y") >= 0) {
             string = string.substring(0, string.length - 7);
             mega = "メガ";
             megaafter = "Ｙ";
         }
-        if (string.includes("-Mega-X")) {
+        if (string.indexOf("-Mega-X") >= 0) {
             string = string.substring(0, string.length - 7);
             mega = "メガ";
             megaafter = "Ｘ";
         }
-        if (string.includes("-Mega")) {
+        if (string.indexOf("-Mega") >= 0) {
             string = string.substring(0, string.length - 5);
             mega = "メガ";
         }
-        if (string.includes(" Type") || string.includes(" Form")) {
+        if (string.indexOf(" Type") >= 0 || string.indexOf(" Form") >= 0) {
             string = string.substring(0, string.length - 5);
         }
     }
