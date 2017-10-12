@@ -342,7 +342,7 @@ function resetData(number, resetsearch) {
     mon = number;
     setTab(0);
     setData(mon);
-    updateSearch(true);
+    updateSearch(false);
 
 }
 
