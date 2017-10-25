@@ -405,9 +405,9 @@ function updateFormatInfo(format, number) {
 	
 	var formatFile;
 	
-	if (format.startsWith("sm")){
+	if (format.indexOf("sm") == 0){
 		formatFile = format.substring(3);
-	} else if (format.startsWith("oras")){
+	} else if (format.indexOf("oras") == 0){
 		formatFile = format.substring(5);
 	} else {
 		formatFile = format;
