@@ -4,8 +4,6 @@ var totalusage;
 select = document.getElementById("select");
 var value = select.options[select.selectedIndex].value;
 
-updateFormatInfo(value);
-
 var mon;
 var tab = 0;
 var tabnum = 44;
@@ -122,7 +120,7 @@ function createButtons() {
             } else {
                 div.setAttribute("class", "button");
             }
-            div.setAttribute("onClick", "resetData(" + i + "), false");
+            div.setAttribute("onClick", "setData(" + i + "); document.getElementById(\"buttonlist\").innerHTML = null; createButtons(); updateSearch();");
             div.setAttribute("id", "button" + i);
             if (div.innerHTML != "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>") {
                 document.getElementById("buttonlist").appendChild(div);
@@ -338,11 +336,7 @@ function resetData(number, resetsearch) {
         }
     }
 
-    updateFormatInfo(value);
-    mon = number;
-    setTab(0);
-    setData(mon);
-    updateSearch(false);
+    updateFormatInfo(value, number);
 
 }
 
@@ -405,16 +399,42 @@ function updateSearch(cleared) {
 }
 
 
-function updateFormatInfo(format) {
+function updateFormatInfo(format, number) {
+	
     var formatinfo = "";
-    items = window[format];
-    totalusage = window[format + "_totalusage"];
-    formatinfo = formatinfodict[format];
-    if (japanese) {
-        document.getElementById("formatinfo").innerHTML = "選んだルール： " + formatinfo;
-    } else {
-        document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
-    }
+	
+	var formatFile;
+	
+	if (format.startsWith("sm")){
+		formatFile = format.substring(3);
+	} else if (format.startsWith("oras")){
+		formatFile = format.substring(5);
+	} else {
+		formatFile = format;
+	}
+	
+	$.getScript("data/"+formatFile+".js", function() {
+		try {
+			totalusage = window[format + "_totalusage"];
+			formatinfo = formatinfodict[format];
+			items = window[format];		
+			
+			mon = number;
+			setTab(0);
+			updateSearch(false);
+			
+			
+			if (japanese) {
+				document.getElementById("formatinfo").innerHTML = "選んだルール： " + formatinfo;
+			} else {
+				document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
+			}
+			
+		}catch(e){
+			
+		}	
+	});
+		
 
 }
 
