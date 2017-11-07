@@ -260,7 +260,10 @@ function setData(number) {
 
         document.getElementById("td62").innerHTML = "";
         document.getElementById("td63").innerHTML = "";
+		document.getElementById("noitems").innerHTML = "";
     } else if (tab == 5 || tab == 7 || tab == 8 && document.getElementById("td2").innerHTML != "") {
+		
+		document.getElementById("noitems").innerHTML = "";
         if (japanese) {
             document.getElementById("noitems").innerHTML = "注記：ポケモンの使用率を見たいときは、名前をクリックしてください";
         } else {
@@ -500,6 +503,10 @@ function passfilter(string) {
             string = string.substring(0, string.length - 5);
         }
     }
+	
+	if (tab == 0 && string == "Metronome"){
+		string = "Metronomemove";
+	}
     var jp = jpdict[string];
     if (string == "" || string == " ") {
         jp = "";
