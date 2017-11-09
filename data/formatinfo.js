@@ -40,5 +40,6 @@ var formatinfodict = {
 	"ps_gen7battlespotsingles_1630_6_17": "PS! Gen 7 BSS stats for June 2017 and rating 1630",
 	"ps_gen7battlespotsingles_1630_7_17": "PS! Gen 7 BSS stats for July 2017 and rating 1630",
 	"ps_gen7battlespotsingles_1630_8_17": "PS! Gen 7 BSS stats for August 2017 and rating 1630",
-	"ps_gen7battlespotsingles_1630_9_17": "PS! Gen 7 BSS stats for September 2017 and rating 1630"
+	"ps_gen7battlespotsingles_1630_9_17": "PS! Gen 7 BSS stats for September 2017 and rating 1630",
+	"ps_gen7battlespotsingles_1630_10_17": "PS! Gen 7 BSS stats for October 2017 and rating 1630"
 }
