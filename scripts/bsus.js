@@ -102,7 +102,15 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             } else if (englishname == "Lycanroc-Midnight") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-m";
-            } else if (englishname.indexOf("-T") >= 0) {
+            } else if (englishname == "Lycanroc-Dusk") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-d";
+			} else if (englishname == "Necrozma-Dawn Wings") {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dw";
+			} else if (englishname == "Necrozma-Dusk Mane") {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dm";			
+			} else if (englishname == "Necrozma-Ultra") {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-u";
+			} else if (englishname.indexOf("-T") >= 0) {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";
             } else if (englishname.indexOf("Silvally") >= 0 && items[i][0].length == 6) {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 3);
@@ -416,7 +424,9 @@ function updateFormatInfo(format, number) {
 		formatFile = format.substring(3);
 	} else if (format.indexOf("oras") == 0){
 		formatFile = format.substring(5);
-	} else {
+	} else if (format.indexOf("usum") == 0){
+		formatFile = format.substring(5);
+	}else {
 		formatFile = format;
 	}
 	
