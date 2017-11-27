@@ -38,13 +38,13 @@ var jpformatinfodict = {
 	"usum_307_2": "USUM シーズン 7 - ダブル",
 	"usum_307_5": "USUM シーズン 7 - スペシャル - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/battle/307/regulation/\"> このシーズンのスペシャルルールについて</a>",
 	"usum_307_7": "USUM シーズン 7 - ＷＣＳ",
-	"ps_gen7battlespotsingles_1730_13_17": "２０１６年１２月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_1_17": "２０１７年１月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_3_17": "２０１７年２月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_5_17": "２０１７年５月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_7_17": "２０１７年６月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_7_17": "２０１７年７月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_8_17": "２０１７年８月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_9_17": "２０１７年９月のPokemon ShowdownのBSS使用率",
-	"ps_gen7battlespotsingles_1730_10_17": "２０１７年１０月のPokemon ShowdownのBSS使用率"
+	"ps_gen7battlespotsingles_1630_12_16": "２０１６年１２月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_1_17": "２０１７年１月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_3_17": "２０１７年２月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_5_17": "２０１７年５月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_7_17": "２０１７年６月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_7_17": "２０１７年７月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_8_17": "２０１７年８月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_9_17": "２０１７年９月のPokemon ShowdownのBSS使用率",
+	"ps_gen7battlespotsingles_1630_10_17": "２０１７年１０月のPokemon ShowdownのBSS使用率"
 }
