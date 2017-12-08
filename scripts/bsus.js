@@ -18,7 +18,7 @@ var japanese = false;
 var l = location.search;
 
 if (l == "?l=jp") {
-    document.getElementById("title").innerHTML = "Battle Spot使用率 - ポケモンサン・ムーンレート";
+    document.getElementById("title").innerHTML = "Battle Spot使用率 - ポケモンウルトラサン・ムーンレート";
     document.getElementById("headertext").innerHTML = "Battle Spot使用率（ベータ） | <a href=\"https://boe2.github.io/bsus.html\" id=\"languagelink\"> English</a>";
     document.getElementById("aboutpage").innerHTML = "このページについて";
     document.getElementById("credits").innerHTML = "<img id=\"leftswablu\" src=\"images/swabluicon.png\">製作者 <strong>boe</strong><img id=\"rightswablu\" src=\"images/swabluicon.png\"><br><br>ポケモンサン・ムーンのレートバトルとインターネット大会の完璧な使用率を表示できるページです。<br> 使用率はPokemon Global Linkから集められています。<br><br> このページを作るにあたってプログラミングを手伝ってくれた<strong>Fischgrat</strong>、<strong>Lego</strong>、<strong>Alpha Ninja</strong>、翻訳を手伝ってくれた<strong>Yosshi</strong>、<strong>hz1016hz</strong>、<strong>youmu@poke</strong>、そして元となるbattlespotstats.comの製作者<strong>hetoord</strong>に改めて感謝を。<br> <br> 問題があれば、 boehijt@gmail.comか<a id=\"link\" href=\"http://www.smogon.com/forums/members/boehijt.228496/\">Smogon</a>かPokemon Showdown!にお問い合わせください。<br> <br> <strong>Pokemon</strong> is © 1995-2017 <strong> Nintendo</strong>";
@@ -440,11 +440,21 @@ function updateFormatInfo(format, number) {
 			setTab(0);
 			updateSearch(false);
 			
+			var lastupdate = "";
+			if (window[format + "_lastupdate"] != undefined){
+				if (!japanese){
+					lastupdate = " - Last updated: " + window[format + "_lastupdate"] + " CET";		
+				}
+				if (japanese) {					
+					lastupdate = " - 最後の更新: " + window[format + "_lastupdate"] + " CET";	
+				}			
+			}
+			
 			
 			if (japanese) {
-				document.getElementById("formatinfo").innerHTML = "選んだルール： " + formatinfo;
+				document.getElementById("formatinfo").innerHTML = "選んだルール： " + formatinfo + lastupdate;
 			} else {
-				document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
+				document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo + lastupdate;
 			}
 			
 		}catch(e){
