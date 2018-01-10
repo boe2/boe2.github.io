@@ -416,7 +416,6 @@ function updateSearch(cleared) {
 
 function updateFormatInfo(format, number) {
 	
-    var formatinfo = "";
 	
 	var formatFile;
 	
@@ -433,7 +432,6 @@ function updateFormatInfo(format, number) {
 	$.getScript("data/"+formatFile+".js", function() {
 		try {
 			totalusage = window[format + "_totalusage"];
-			formatinfo = formatinfodict[format];
 			items = window[format];		
 			
 			mon = number;
@@ -443,19 +441,13 @@ function updateFormatInfo(format, number) {
 			var lastupdate = "";
 			if (window[format + "_lastupdate"] != undefined){
 				if (!japanese){
-					lastupdate = " - Last updated: " + window[format + "_lastupdate"] + " CET";		
+					lastupdate = "Last update: " + window[format + "_lastupdate"] + " CET";		
 				}
 				if (japanese) {					
-					lastupdate = " - 最後の更新: " + window[format + "_lastupdate"] + " CET";	
+					lastupdate = "最後の更新: " + window[format + "_lastupdate"] + " CET";	
 				}			
 			}
-			
-			
-			if (japanese) {
-				document.getElementById("formatinfo").innerHTML = "選んだルール： " + formatinfo + lastupdate;
-			} else {
-				document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo + lastupdate;
-			}
+			document.getElementById("formatinfo").innerHTML = lastupdate;
 			
 		}catch(e){
 			
