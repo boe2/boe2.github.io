@@ -26,9 +26,6 @@ if (l == "?l=jp") {
     document.getElementById("pokemonbyranking").innerHTML = "ポケモンランキング";
     document.getElementById("showstats").innerHTML = "使用率表示";
     document.getElementById("selectformat").innerHTML = "ルールを選んでください";
-    document.getElementById("formatinfo").innerHTML = "選んだルール";
-
-    formatinfodict = jpformatinfodict;
 
     var selector = document.getElementById("select").innerHTML;
     selector = replaceAll(selector, "Current Ladders", "現在のレート");
