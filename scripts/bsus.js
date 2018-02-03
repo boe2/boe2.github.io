@@ -28,6 +28,7 @@ if (l == "?l=jp") {
     document.getElementById("selectformat").innerHTML = "ルールを選んでください";
 
     var selector = document.getElementById("select").innerHTML;
+    selector = replaceAll(selector, "Current USUM Ladder", "現在のUSUMレート");
     selector = replaceAll(selector, "Current Ladders", "現在のレート");
     selector = replaceAll(selector, "Current Season", "現在のシーズン");
     selector = replaceAll(selector, "Past Seasons", "前のシーズン");
@@ -51,6 +52,8 @@ if (l == "?l=jp") {
 
 
 function createButtons() {
+
+	var error = 0;
 
     for (i = 0; i < items.length; i++) {
         try {
@@ -115,7 +118,7 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             }
 
-            if (pokedexNo == "") {
+            if (pokedexNo == "" || pokedexNo == "null") {
                 pokedexNo = "undefined";
             }
 
@@ -127,11 +130,13 @@ function createButtons() {
                 div.setAttribute("class", "button");
             }
             div.setAttribute("onClick", "setData(" + i + "); document.getElementById(\"buttonlist\").innerHTML = null; createButtons(); updateSearch();");
-            div.setAttribute("id", "button" + i);
-            if (div.innerHTML != "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>") {
+            div.setAttribute("id", "button" + (i - error));
+            if (div.innerHTML == "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>") {
+				console.log('1');
+			}else{
+				
                 document.getElementById("buttonlist").appendChild(div);
-
-            }
+			}
         } catch (err) {
 
         }
