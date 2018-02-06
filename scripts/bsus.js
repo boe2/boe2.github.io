@@ -61,6 +61,7 @@ function createButtons() {
 
             var pokedexNo;
             var englishname;
+			console.log(pokedexNo + englishname);
 
             if (japanese) {
                 if (ps) {
@@ -98,10 +99,10 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "m";
             } else if (englishname == "Ash-Greninja") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
+            } else if (englishname == "Lycanroc-Night") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-m";
             } else if (englishname == "Lycanroc-Midday") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
-            } else if (englishname == "Lycanroc-Midnight") {
-                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-m";
             } else if (englishname == "Lycanroc-Dusk") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-d";
 			} else if (englishname == "Necrozma-Dawn Wings") {
