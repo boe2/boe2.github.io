@@ -888,6 +888,8 @@
 	"798-0": "Kartana",
 	"799-0": "Guzzlord",
 	"800-0": "Necrozma",
+	"800-1": "Necrozma-Dusk Mane",
+	"800-2": "Necrozma-Dawn Wings",
 	"801-0": "Magearna",
 	"802-0": "Marshadow",
 	"803-0": "Poipole",

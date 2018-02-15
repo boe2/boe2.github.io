@@ -61,30 +61,32 @@ function createButtons() {
 
             var pokedexNo;
             var englishname;
-			console.log(pokedexNo + englishname);
-
+			
+			
+			
             if (japanese) {
                 if (ps) {
                     englishname = items[i][1];
                     try {
-                        name = passfilter(englishname)
+                        name = passfilter(englishname);
                     } catch (err) {}
                 } else {
                     englishname = dict[items[i][0]];
                     try {
-                        name = passfilter(englishname)
+                        name = passfilter(englishname);
                     } catch (err) {}
                 }
             } else {
                 if (ps) {
                     englishname = items[i][1];
                     name = englishname;
+					
                 } else {
                     englishname = dict[items[i][0]];
                     name = englishname;
                 }
             }
-
+			
             if (englishname.substring(englishname.length - 6) == "-Alola") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
             } else if (englishname == "Rotom-Wash") {
@@ -104,11 +106,11 @@ function createButtons() {
             } else if (englishname == "Lycanroc-Midday") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             } else if (englishname == "Lycanroc-Dusk") {
-                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-d";
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-d";		
+			} else if (englishname == "Necrozma-Dusk Mane") {
+				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dm";
 			} else if (englishname == "Necrozma-Dawn Wings") {
 				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dw";
-			} else if (englishname == "Necrozma-Dusk Mane") {
-				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dm";			
 			} else if (englishname == "Necrozma-Ultra") {
 				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-u";
 			} else if (englishname.indexOf("-T") >= 0) {
@@ -119,6 +121,7 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             }
 
+			
             if (pokedexNo == "" || pokedexNo == "null") {
                 pokedexNo = "undefined";
             }
