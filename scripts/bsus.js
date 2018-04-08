@@ -17,7 +17,7 @@ var japanese = false;
 
 var l = location.search;
 
-if (l == "?l=jp") {
+if (l === "?l=jp") {
     document.getElementById("title").innerHTML = "バトルスポット使用率 - ポケモンウルトラサン・ムーンレート";
     document.getElementById("headertext").innerHTML = "Battle Spot使用率（ベータ） | <a href=\"https://boe2.github.io/bsus.html\" id=\"languagelink\"> English</a>";
     document.getElementById("aboutpage").innerHTML = "このページについて";
@@ -53,7 +53,7 @@ if (l == "?l=jp") {
 
 function createButtons() {
 
-	var error = 0;
+    var error = 0;
 
     for (i = 0; i < items.length; i++) {
         try {
@@ -61,9 +61,8 @@ function createButtons() {
 
             var pokedexNo;
             var englishname;
-			
-			
-			
+
+
             if (japanese) {
                 if (ps) {
                     englishname = items[i][1];
@@ -80,67 +79,67 @@ function createButtons() {
                 if (ps) {
                     englishname = items[i][1];
                     name = englishname;
-					
+
                 } else {
                     englishname = dict[items[i][0]];
                     name = englishname;
                 }
             }
-			
-            if (englishname.substring(englishname.length - 6) == "-Alola") {
+
+            if (englishname.substring(englishname.length - 6) === "-Alola") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
-            } else if (englishname == "Rotom-Wash") {
+            } else if (englishname === "Rotom-Wash") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "w";
-            } else if (englishname == "Rotom-Heat") {
+            } else if (englishname === "Rotom-Heat") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "h";
-            } else if (englishname == "Rotom-Fan") {
+            } else if (englishname === "Rotom-Fan") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "s";
-            } else if (englishname == "Rotom-Frost") {
+            } else if (englishname === "Rotom-Frost") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "f";
-            } else if (englishname == "Rotom-Mow") {
+            } else if (englishname === "Rotom-Mow") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "m";
-            } else if (englishname == "Ash-Greninja") {
+            } else if (englishname === "Ash-Greninja") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
-            } else if (englishname == "Lycanroc-Night") {
+            } else if (englishname === "Lycanroc-Night") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-m";
-            } else if (englishname == "Lycanroc-Midday") {
+            } else if (englishname === "Lycanroc-Midday") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
-            } else if (englishname == "Lycanroc-Dusk") {
-                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-d";		
-			} else if (englishname == "Necrozma-Dusk Mane") {
-				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dm";
-			} else if (englishname == "Necrozma-Dawn Wings") {
-				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dw";
-			} else if (englishname == "Necrozma-Ultra") {
-				pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-u";
-			} else if (englishname.indexOf("-T") >= 0) {
+            } else if (englishname === "Lycanroc-Dusk") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-d";
+            } else if (englishname === "Necrozma-Dusk Mane") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dm";
+            } else if (englishname === "Necrozma-Dawn Wings") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-dw";
+            } else if (englishname === "Necrozma-Ultra") {
+                pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-u";
+            } else if (englishname.indexOf("-T") >= 0) {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";
-            } else if (englishname.indexOf("Silvally") >= 0 && items[i][0].length == 6) {
+            } else if (englishname.indexOf("Silvally") >= 0 && items[i][0].length === 6) {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 3);
             } else {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             }
 
-			
-            if (pokedexNo == "" || pokedexNo == "null") {
+
+            if (pokedexNo === "" || pokedexNo === "null") {
                 pokedexNo = "undefined";
             }
 
             div.innerHTML = "<img src=\"images/" + pokedexNo + ".png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - " + name + "</span>";
 
-            if (i == mon) {
+            if (i === mon) {
                 div.setAttribute("class", "clickedbutton");
             } else {
                 div.setAttribute("class", "button");
             }
             div.setAttribute("onClick", "setData(" + i + "); document.getElementById(\"buttonlist\").innerHTML = null; createButtons(); updateSearch();");
             div.setAttribute("id", "button" + (i - error));
-            if (div.innerHTML == "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>") {
-				console.log('1');
-			}else{
-				
+            if (div.innerHTML === "<img src=\"images/undefined.png\"><span class=\"pokemonbutton\">#" + (1 + i) + " - undefined</span>") {
+                console.log("1");
+            } else {
+
                 document.getElementById("buttonlist").appendChild(div);
-			}
+            }
         } catch (err) {
 
         }
@@ -158,7 +157,7 @@ function setData(number) {
     } catch (err) {
 
     }
-    if (items[number]["3"] == "null") {
+    if (items[number]["3"] === "null") {
         type = "<img class=\"typeimage\" src=\"images\\" + items[number][2].toLowerCase() + ".png\">";
     }
     pokedexNo = items[number][0].substring(0, items[number][0].length - 2);
@@ -176,7 +175,7 @@ function setData(number) {
             document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo + " - " + items[number][1] + " - " + type + " - Usage: " + Math.round(items[number][items[number].length - 1] * 100000) / 1000 + "%";
         }
     }
-    if (tab == 0 || tab == 1 || tab == 2 || tab == 3 || tab == 4 || tab == 6) {
+    if (tab === 0 || tab === 1 || tab === 2 || tab === 3 || tab === 4 || tab === 6) {
         var totalperc = 0;
         var stop = 20;
         for (i = 0; i < stop; i++) {
@@ -191,7 +190,7 @@ function setData(number) {
 
     }
 
-    if (tab == 5 || tab == 7 || tab == 8) {
+    if (tab === 5 || tab === 7 || tab === 8) {
         for (i = 0; i < 20; i++) {
             var id = items[number][tabnum + i];
             if (japanese) {
@@ -199,7 +198,7 @@ function setData(number) {
             } else {
                 var name = dict[id];
             }
-            if (name != undefined) {
+            if (name !== undefined) {
 
                 var text = "<div onClick=\"lookForMon(\'" + name + "\'); emptysearch();\">" + name + "</div>";
                 document.getElementById("td" + (3 * (i + 1) - 1).toString()).innerHTML = text;
@@ -212,19 +211,19 @@ function setData(number) {
     }
 
     for (i = 0; i < 20; i++) {
-        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML == "null" && tab != 2) {
+        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML === "null" && tab !== 2) {
             document.getElementById("td" + ((i + 1) * 3).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML = "";
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
         }
     }
 
-    if (tab == 2) {
+    if (tab === 2) {
         var j = 3;
-        if (document.getElementById("td8").innerHTML == "null") {
+        if (document.getElementById("td8").innerHTML === "null") {
             j = 2;
         }
-        if (document.getElementById("td5").innerHTML == "null") {
+        if (document.getElementById("td5").innerHTML === "null") {
             j = 1;
         }
         for (i = j; i < 20; i++) {
@@ -236,12 +235,12 @@ function setData(number) {
 
     var total = 400;
 
-    if (tab == 4 || tab == 3 || tab == 1 || tab == 6) {
+    if (tab === 4 || tab === 3 || tab === 1 || tab === 6) {
         total = 100;
     }
 
     var other = total - totalperc;
-    if (tab == 2) {
+    if (tab === 2) {
         other = 0;
     }
 
@@ -252,33 +251,33 @@ function setData(number) {
     }
     document.getElementById("td63").innerHTML = other + "%";
 
-    if ((document.getElementById("td59").innerHTML == "")) {
+    if ((document.getElementById("td59").innerHTML === "")) {
         document.getElementById("td62").innerHTML = "";
         document.getElementById("td63").innerHTML = "";
     }
 
 
-    if (tab == 2 || tab == 5 || tab == 7 || tab == 8) {
+    if (tab === 2 || tab === 5 || tab === 7 || tab === 8) {
         document.getElementById("td62").innerHTML = "";
         document.getElementById("td63").innerHTML = "";
     }
 
     for (i = 0; i < 20; i++) {
         document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "";
-        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML != "") {
+        if (document.getElementById("td" + ((i + 1) * 3 - 1).toString()).innerHTML !== "") {
             document.getElementById("td" + ((i + 1) * 3 - 2).toString()).innerHTML = "#" + (i + 1);
         }
     }
 
-    if (document.getElementById("td1").innerHTML == "" && tab == 1) {
+    if (document.getElementById("td1").innerHTML === "" && tab === 1) {
         document.getElementById("noitems").innerHTML = "Held item data for this Pokemon is unavailable, presumably because this Pokemon has not used any held items, or because the competition/ladder didn't allow the use of held items.";
 
         document.getElementById("td62").innerHTML = "";
         document.getElementById("td63").innerHTML = "";
-		document.getElementById("noitems").innerHTML = "";
-    } else if (tab == 5 || tab == 7 || tab == 8 && document.getElementById("td2").innerHTML != "") {
-		
-		document.getElementById("noitems").innerHTML = "";
+        document.getElementById("noitems").innerHTML = "";
+    } else if (tab === 5 || tab === 7 || tab === 8 && document.getElementById("td2").innerHTML !== "") {
+
+        document.getElementById("noitems").innerHTML = "";
         if (japanese) {
             document.getElementById("noitems").innerHTML = "注記：ポケモンの使用率を見たいときは、名前をクリックしてください";
         } else {
@@ -287,18 +286,18 @@ function setData(number) {
     } else {
         document.getElementById("noitems").innerHTML = "";
     }
-	
+
     document.getElementById("noitems").innerHTML = "";
-	if (tab == 4 || tab == 5) {
-        if (document.getElementById("td2").innerHTML == "") {
+    if (tab === 4 || tab === 5) {
+        if (document.getElementById("td2").innerHTML === "") {
             if (japanese) {
                 document.getElementById("noitems").innerHTML = "このポケモンは対戦であまり強くないらしいです・・・";
             } else {
                 document.getElementById("noitems").innerHTML = "This Pokemon does not appear to be particularly successful in battles...";
             }
         }
-	}
-	
+    }
+
 }
 
 function setTab(number) {
@@ -308,7 +307,7 @@ function setTab(number) {
     for (var i = 0; i < 9; i++) {
         buttonname = "tabbutton" + i.toString();
         if (ps) {
-            if (!(i == 4 || i == 5 || i == 6 || i == 7 || i == 8)) {
+            if (!(i === 4 || i === 5 || i === 6 || i === 7 || i === 8)) {
                 document.getElementById(buttonname).className = "coloredbutton";
             }
         } else {
@@ -319,7 +318,7 @@ function setTab(number) {
     buttonname = "tabbutton" + tab.toString();
     tabnum = tabnums[tab];
     document.getElementById("tabnamespan").innerHTML = tabnames[tab];
-    if (document.getElementById("tabnamespan").innerHTML == "Natures" && ps) {
+    if (document.getElementById("tabnamespan").innerHTML === "Natures" && ps) {
         document.getElementById("tabnamespan").innerHTML = "Spreads";
     }
     document.getElementById(buttonname).className = "coloredclickedbutton";
@@ -331,7 +330,7 @@ function resetData(number, resetsearch) {
 
     var value = select.options[select.selectedIndex].value;
 
-    if (value.substring(0, 2) == "ps") {
+    if (value.substring(0, 2) === "ps") {
         ps = true;
         if (japanese) {
             document.getElementById("psnotabs").innerHTML = "<span id=\"tabbutton0\" class=\"coloredbutton\" onclick=\"setTab(0)\">技</span> | <span id=\"tabbutton1\" class=\"coloredbutton\" onclick=\"setTab(1)\">持ち物</span> | <span id=\"tabbutton2\" class=\"coloredbutton\" onclick=\"setTab(2)\">特性</span> | <span id=\"tabbutton3\" class=\"coloredbutton\" onclick=\"setTab(3)\">性格</span>";
@@ -372,7 +371,7 @@ function updateSearch(cleared) {
         document.getElementById("searchbox").value = "";
     }
 
-    if (value == "") {
+    if (value === "") {
         if (japanese) {
             document.getElementById("searchtext").innerHTML = "検索：";
 
@@ -392,20 +391,20 @@ function updateSearch(cleared) {
         for (var j = 0; j < datanames.length; j++) {
             var data = items[i][datanames[j]];
 
-            if (data != undefined && !japanese) {
+            if (data !== undefined && !japanese) {
                 if (data.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
                     include = true;
                 }
             }
-            if (data != undefined && japanese) {
+            if (data !== undefined && japanese) {
                 if (data.toLowerCase().indexOf(value.toLowerCase()) >= 0 || passfilter(data).indexOf(value.toLowerCase()) >= 0) {
                     include = true;
                 }
             }
         }
-        if (include == false && document.getElementById("button" + i.toString()) != undefined) {
+        if (include === false && document.getElementById("button" + i.toString()) !== undefined) {
             document.getElementById("button" + i.toString()).style.display = "none";
-        } else if (include == true && document.getElementById("buttonbutton" + i.toString()) != null) {
+        } else if (include === true && document.getElementById("buttonbutton" + i.toString()) !== null) {
             document.getElementById("button" + i.toString()).style.display = "block";
         }
     }
@@ -421,45 +420,45 @@ function updateSearch(cleared) {
 
 
 function updateFormatInfo(format, number) {
-	
-	
-	var formatFile;
-	
-	if (format.indexOf("sm") == 0){
-		formatFile = format.substring(3);
-	} else if (format.indexOf("oras") == 0){
-		formatFile = format.substring(5);
-	} else if (format.indexOf("usum") == 0){
-		formatFile = format.substring(5);
-	}else {
-		formatFile = format;
-	}
-	
-	$.getScript("data/"+formatFile+".js", function() {
-		try {
-			totalusage = window[format + "_totalusage"];
-			items = window[format];		
-			
-			mon = number;
-			setTab(0);
-			updateSearch(false);
-			
-			var lastupdate = "";
-			if (window[format + "_lastupdate"] != undefined){
-				if (!japanese){
-					lastupdate = "Last update: " + window[format + "_lastupdate"] + " CET";		
-				}
-				if (japanese) {					
-					lastupdate = "最後の更新: " + window[format + "_lastupdate"] + " CET";	
-				}			
-			}
-			document.getElementById("formatinfo").innerHTML = lastupdate;
-			
-		}catch(e){
-			
-		}	
-	});
-		
+
+
+    var formatFile;
+
+    if (format.indexOf("sm") === 0) {
+        formatFile = format.substring(3);
+    } else if (format.indexOf("oras") === 0) {
+        formatFile = format.substring(5);
+    } else if (format.indexOf("usum") === 0) {
+        formatFile = format.substring(5);
+    } else {
+        formatFile = format;
+    }
+
+    $.getScript("data/" + formatFile + ".js", function () {
+        try {
+            totalusage = window[format + "_totalusage"];
+            items = window[format];
+
+            mon = number;
+            setTab(0);
+            updateSearch(false);
+
+            var lastupdate = "";
+            if (window[format + "_lastupdate"] !== undefined) {
+                if (!japanese) {
+                    lastupdate = "Last update: " + window[format + "_lastupdate"] + " CET";
+                }
+                if (japanese) {
+                    lastupdate = "最後の更新: " + window[format + "_lastupdate"] + " CET";
+                }
+            }
+            document.getElementById("formatinfo").innerHTML = lastupdate;
+
+        } catch (e) {
+
+        }
+    });
+
 
 }
 
@@ -498,7 +497,7 @@ function emptysearch() {
 }
 
 function passfilter(string) {
-    if (string == undefined) {
+    if (string === undefined) {
         return null;
     }
     var mega = "";
@@ -525,15 +524,15 @@ function passfilter(string) {
             string = string.substring(0, string.length - 5);
         }
     }
-	
-	if (tab == 0 && string == "Metronome"){
-		string = "Metronomemove";
-	}
+
+    if (tab === 0 && string === "Metronome") {
+        string = "Metronomemove";
+    }
     var jp = jpdict[string];
-    if (string == "" || string == " ") {
+    if (string === "" || string === " ") {
         jp = "";
     }
-    if (jp == undefined) {
+    if (jp === undefined) {
         jp = string;
     }
     jp = mega + jp + megaafter;
@@ -541,7 +540,7 @@ function passfilter(string) {
 }
 
 function replaceAll(str, find, replace) {
-    return str.replace(new RegExp(find, 'g'), replace);
+    return str.replace(new RegExp(find, "g"), replace);
 }
 
 resetData(0);
