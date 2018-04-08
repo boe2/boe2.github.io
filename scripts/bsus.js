@@ -45,7 +45,7 @@ if (l === "?l=jp") {
     selector = replaceAll(selector, "Rating", "レート");
     selector = replaceAll(selector, "Competitions", "インターネット大会");
 
-    document.getElementById("select").innerHTML　 = selector;
+    document.getElementById("select").innerHTML = selector;
 
     japanese = true;
 }
