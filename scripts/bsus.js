@@ -249,6 +249,9 @@ function setData(number) {
     } else {
         document.getElementById("td62").innerHTML = "Other";
     }
+	if (other < 0){
+		other = 0;
+	}
     document.getElementById("td63").innerHTML = other + "%";
 
     if ((document.getElementById("td59").innerHTML === "")) {
