@@ -29,6 +29,9 @@ if (l === "?l=jp") {
 
     var selector = document.getElementById("select").innerHTML;
     selector = replaceAll(selector, "Current USUM Ladder", "現在のUSUMレート");
+    selector = replaceAll(selector, "Current Pokemon Showdown Ladder", "現在のPokemon Showdownレート");
+    selector = replaceAll(selector, "Pokemon Showdown Old ", "過去のPokemon Showdown");
+    selector = replaceAll(selector, "(Rating: 1630)", "1630"); 
     selector = replaceAll(selector, "Current Ladders", "現在のレート");
     selector = replaceAll(selector, "Current Season", "現在のシーズン");
     selector = replaceAll(selector, "Past Seasons", "前のシーズン");
@@ -43,7 +46,7 @@ if (l === "?l=jp") {
     selector = replaceAll(selector, "Sun and Moon", "サンムーン");
     selector = replaceAll(selector, "Ladders", "レート");
     selector = replaceAll(selector, "Rating", "レート");
-    selector = replaceAll(selector, "Competitions", "インターネット大会");
+    selector = replaceAll(selector, "Competitions", "インターネット大会"); 
 
     document.getElementById("select").innerHTML = selector;
 
