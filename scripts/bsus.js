@@ -93,15 +93,7 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
             } else if (englishname === "Rotom-Wash") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "w";
-            } else if (items[i][0] === "718-3") {
-				pokedexNo = items[i][0];
-				if (japanese) { name = passfilter("Zygarde-100%"); } else { name = "Zygarde-100%"; englishname = "Zygarde-100%";}
-				items[i][1] = name + " Forme";
-			} else if (items[i][0] === "718-2") {
-				pokedexNo = items[i][0];
-				if (japanese) { name = passfilter("Zygarde-10%"); } else { name = "Zygarde-10%"; englishname = "Zygarde-10%";}
-				items[i][1] = name + " Forme";
-			} else if (englishname === "Rotom-Heat") {
+            } else if (englishname === "Rotom-Heat") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "h";
             } else if (englishname === "Rotom-Fan") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "s";
