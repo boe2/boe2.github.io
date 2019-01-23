@@ -49,8 +49,11 @@ if (l === "?l=jp") {
     selector = replaceAll(selector, "Competitions", "インターネット大会"); 
 
     document.getElementById("select").innerHTML = selector;
+	document.getElementById("searchbox").placeholder = "検索";
 
     japanese = true;
+	
+	
 }
 
 
@@ -93,15 +96,7 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-a";
             } else if (englishname === "Rotom-Wash") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "w";
-            } else if (items[i][0] === "718-3") {
-				pokedexNo = items[i][0];
-				if (japanese) { name = passfilter("Zygarde-100%"); } else { name = "Zygarde-100%"; englishname = "Zygarde-100%";}
-				items[i][1] = name + " Forme";
-			} else if (items[i][0] === "718-2") {
-				pokedexNo = items[i][0];
-				if (japanese) { name = passfilter("Zygarde-10%"); } else { name = "Zygarde-10%"; englishname = "Zygarde-10%";}
-				items[i][1] = name + " Forme";
-			} else if (englishname === "Rotom-Heat") {
+            } else if (englishname === "Rotom-Heat") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "h";
             } else if (englishname === "Rotom-Fan") {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "s";
@@ -127,6 +122,14 @@ function createButtons() {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2) + "-s";
             } else if (englishname.indexOf("Silvally") >= 0 && items[i][0].length === 6) {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 3);
+			} else if (items[i][0] === "718-3") {
+				pokedexNo = "718-3";
+				if (japanese) { name = passfilter("Zygarde-100%"); } else { name = "Zygarde-100%"; englishname = "Zygarde-100%";}
+				items[i][1] = "Zygarde-100% Forme";
+			} else if (items[i][0] === "718-2") {
+				pokedexNo = "718-2";
+				if (japanese) { name = passfilter("Zygarde-10%"); } else { name = "Zygarde-10%"; englishname = "Zygarde-10%";}
+				items[i][1] = "Zygarde-10% Forme";
             } else {
                 pokedexNo = items[i][0].substring(0, items[i][0].length - 2);
             }
@@ -385,19 +388,6 @@ function updateSearch(cleared) {
         document.getElementById("searchbox").value = "";
     }
 
-    if (value === "") {
-        if (japanese) {
-            document.getElementById("searchtext").innerHTML = "検索：";
-
-        } else {
-            document.getElementById("searchtext").innerHTML = "Search:";
-        }
-    } else {
-        document.getElementById("searchtext").innerHTML = "<div style=\"padding:0px 1px 0px 2px\"><button onClick=(emptysearch())>Clear</button></div>";
-    }
-
-    document.getElementById("jpsearchresults").innerHTML = "";
-
     for (var i = 0; i < items.length; i++) {
 
         var include = false;
@@ -420,14 +410,6 @@ function updateSearch(cleared) {
             document.getElementById("button" + i.toString()).style.display = "none";
         } else if (include === true && document.getElementById("buttonbutton" + i.toString()) !== null) {
             document.getElementById("button" + i.toString()).style.display = "block";
-        }
-    }
-
-    if (!japanese) {
-        for (var entry in jpdict) {
-            if (jpdict[entry].indexOf(value) >= 0 && value.length > 0) {
-                document.getElementById("jpsearchresults").innerHTML += jpdict[entry] + " - " + entry + "<br>";
-            }
         }
     }
 }
