@@ -2,488 +2,537 @@
 <html>
 
 <head>
-    <title id="title">Battle Spot Usage Stats - Pokemon Ultra Sun and Moon</title>
-    <meta charset="utf-8">
-    <link href="css/bsus.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/swabluicon.png">
+  <title id="title">Battle Spot Usage Stats - Pokemon Ultra Sun and Moon</title>
+  <meta charset="utf-8">
+  <link href="css/bsus.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/swabluicon.png">
 </head>
 
 <body>
-    <div id="header">
-        <h2 id="headertext">Battle Spot Usage Stats (beta) | <a href="https://boe2.github.io/bsus.html?l=jp" id="languagelink">日本語</a></h2>
+  <div id="header">
+    <h2 id="headertext">Battle Spot Usage Stats (beta) | <a href="https://boe2.github.io/bsus.html?l=jp" id="languagelink">日本語</a></h2>
+  </div>
+  <div id="info">
+    <div id="selectandbutton">
+      <label id="selectformat">Select format:</label>
+      <select id="select">
+        <!-- CURRENT USUM LADDER -->
+        <option disabled value="#">
+          Current USUM Ladder
+        </option>
+        <option value="usum_317_0">
+          Season 17 - All
+        </option>
+        <option value="usum_317_1" selected="selected">
+          Season 17 - Singles
+        </option>
+        <option value="usum_317_2">
+          Season 17 - Doubles
+        </option>
+        <option value="usum_317_5">
+          Season 17 - Special
+        </option>
+        <option value="usum_317_6">
+          Season 17 - VGC
+        </option>
+        <!-- END CURRENT USUM LADDER -->
+        <!-- CURRENT PS LADDER -->
+        <option disabled value="#">
+          Current Pokemon Showdown Ladder
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_8_18">
+          PS Gen 7 BSS August 2018 (Rating: 1630)
+        </option>
+        <!-- END CURRENT PS LADDER -->
+        <!-- PAST USUM LADDERS -->
+        <option disabled value="#">
+          USUM Ladders
+        </option>
+        <option value="usum_316_0">
+          Season 16 - All
+        </option>
+        <option value="usum_316_1">
+          Season 16 - Singles
+        </option>
+        <option value="usum_316_2">
+          Season 16 - Doubles
+        </option>
+        <option value="usum_316_5">
+          Season 16 - Special
+        </option>
+        <option value="usum_316_6">
+          Season 16 - VGC
+        </option>
+        <option value="usum_315_0">
+          Season 15 - All
+        </option>
+        <option value="usum_315_1">
+          Season 15 - Singles
+        </option>
+        <option value="usum_315_2">
+          Season 15 - Doubles
+        </option>
+        <option value="usum_315_5">
+          Season 15 - Special
+        </option>
+        <option value="usum_315_6">
+          Season 15 - VGC
+        </option>
+        <option value="usum_314_0">
+          Season 14 - All
+        </option>
+        <option value="usum_314_1">
+          Season 14 - Singles
+        </option>
+        <option value="usum_314_2">
+          Season 14 - Doubles
+        </option>
+        <option value="usum_314_5">
+          Season 14 - Special
+        </option>
+        <option value="usum_314_6">
+          Season 14 - VGC
+        </option>
+        <option value="usum_313_0">
+          Season 13 - All
+        </option>
+        <option value="usum_313_1">
+          Season 13 - Singles
+        </option>
+        <option value="usum_313_2">
+          Season 13 - Doubles
+        </option>
+        <option value="usum_313_5">
+          Season 13 - Special
+        </option>
+        <option value="usum_313_6">
+          Season 13 - VGC
+        </option>
+        <option value="usum_312_0">
+          Season 12 - All
+        </option>
+        <option value="usum_312_1">
+          Season 12 - Singles
+        </option>
+        <option value="usum_312_2">
+          Season 12 - Doubles
+        </option>
+        <option value="usum_312_5">
+          Season 12 - Special
+        </option>
+        <option value="usum_312_6">
+          Season 12 - VGC
+        </option>
+        <option value="usum_311_0">
+          Season 11 - All
+        </option>
+        <option value="usum_311_1">
+          Season 11 - Singles
+        </option>
+        <option value="usum_311_2">
+          Season 11 - Doubles
+        </option>
+        <option value="usum_311_5">
+          Season 11 - Special
+        </option>
+        <option value="usum_311_6">
+          Season 11 - VGC
+        </option>
+        <option value="usum_310_0">
+          Season 10 - All
+        </option>
+        <option value="usum_310_1">
+          Season 10 - Singles
+        </option>
+        <option value="usum_310_2">
+          Season 10 - Doubles
+        </option>
+        <option value="usum_310_5">
+          Season 10 - Special
+        </option>
+        <option value="usum_310_6">
+          Season 10 - VGC
+        </option>
+        <option value="usum_309_0">
+          Season 9 - All
+        </option>
+        <option value="usum_309_1">
+          Season 9 - Singles
+        </option>
+        <option value="usum_309_2">
+          Season 9 - Doubles
+        </option>
+        <option value="usum_309_5">
+          Season 9 - Special
+        </option>
+        <option value="usum_309_6">
+          Season 9 - VGC
+        </option>
+        <option value="usum_308_0">
+          Season 8 - All
+        </option>
+        <option value="usum_308_1">
+          Season 8 - Singles
+        </option>
+        <option value="usum_308_2">
+          Season 8 - Doubles
+        </option>
+        <option value="usum_308_5">
+          Season 8 - Special
+        </option>
+        <option value="usum_308_6">
+          Season 8 - VGC
+        </option>
+        <option value="usum_307_1">
+          Season 7 - Singles
+        </option>
+        <option value="usum_307_2">
+          Season 7 - Doubles
+        </option>
+        <option value="usum_307_5">
+          Season 7 - Special
+        </option>
+        <option value="usum_307_6">
+          Season 7 - VGC
+        </option>
+        <!-- END PAST USUM LADDERS -->
+        <!-- PAST USUM PS LADDERS -->
+        <option disabled value="#">
+          Pokemon Showdown Old Ladders (USUM)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_12_17">
+          PS Gen 7 BSS December 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_1_18">
+          PS Gen 7 BSS January 2018 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_2_18">
+          PS Gen 7 BSS February 2018 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_3_18">
+          PS Gen 7 BSS March 2018 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_4_18">
+          PS Gen 7 BSS April 2018 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_5_18">
+          PS Gen 7 BSS May 2018 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_6_18">
+          PS Gen 7 BSS June 2018 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_7_18">
+          PS Gen 7 BSS July 2018 (Rating: 1630)
+        </option>
+        <option disabled value="#">
+          Pokemon Showdown Old Ladders (Sun and Moon)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_12_16">
+          PS Gen 7 BSS December 2016 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_1_17">
+          PS Gen 7 BSS January 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_2_17">
+          PS Gen 7 BSS February 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_5_17">
+          PS Gen 7 BSS May 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_6_17">
+          PS Gen 7 BSS June 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_7_17">
+          PS Gen 7 BSS July 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_8_17">
+          PS Gen 7 BSS August 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_9_17">
+          PS Gen 7 BSS September 2017 (Rating: 1630)
+        </option>
+        <option value="ps_gen7battlespotsingles_1630_10_17">
+          PS Gen 7 BSS October 2017 (Rating: 1630)
+        </option>
+        <!-- PAST USUM PS LADDERS -->
+        <!-- SM LADDERS -->
+        <option disabled value="#">
+          SM Ladders
+        </option>
+        <option value="sm_202_0">
+          Season 2 - All
+        </option>
+        <option value="sm_202_1">
+          Season 2 - Singles
+        </option>
+        <option value="sm_202_2">
+          Season 2 - Doubles
+        </option>
+        <option value="sm_202_5">
+          Season 2 - Special
+        </option>
+        <option value="sm_202_6">
+          Season 2 - VGC
+        </option>
+        <option value="sm_203_0">
+          Season 3 - All
+        </option>
+        <option value="sm_203_1">
+          Season 3 - Singles
+        </option>
+        <option value="sm_203_2">
+          Season 3 - Doubles
+        </option>
+        <option value="sm_203_5">
+          Season 3 - Special
+        </option>
+        <option value="sm_203_6">
+          Season 3 - VGC
+        </option>
+        <option value="sm_204_0">
+          Season 4 - All
+        </option>
+        <option value="sm_204_1">
+          Season 4 - Singles
+        </option>
+        <option value="sm_204_2">
+          Season 4 - Doubles
+        </option>
+        <option value="sm_204_5">
+          Season 4 - Special
+        </option>
+        <option value="sm_204_6">
+          Season 4 - VGC
+        </option>
+        <option value="sm_205_0">
+          Season 5 - All
+        </option>
+        <option value="sm_205_1">
+          Season 5 - Singles
+        </option>
+        <option value="sm_205_2">
+          Season 5 - Doubles
+        </option>
+        <option value="sm_205_5">
+          Season 5 - Special
+        </option>
+        <option value="sm_205_6">
+          Season 5 - VGC
+        </option>
+        <option value="sm_206_0">
+          Season 6 - All
+        </option>
+        <option value="sm_206_1">
+          Season 6 - Singles
+        </option>
+        <option value="sm_206_2">
+          Season 6 - Doubles
+        </option>
+        <option value="sm_206_5">
+          Season 6 - Special
+        </option>
+        <option value="sm_206_6">
+          Season 6 - VGC
+        </option>
+        <!-- END SM LADDERS -->
+        <!-- USUM COMPETITIONS -->
+        <option disabled value="#">
+          USUM Competitions
+        </option>
+        <option value="competition5111">
+          Dragon Cup - Master Division
+        </option>
+        <!-- END USUM COMPETITIONS -->
+        <!-- SM COMPETITIONS -->
+        <option disabled value="#">
+          Sun and Moon Competitions
+        </option>
+        <option value="competition4101">
+          Battle of Alola - Junior Division
+        </option>
+        <option value="competition4102">
+          Battle of Alola - Masters Division
+        </option>
+        <option value="competition4103">
+          Alola Friendly - Junior Division
+        </option>
+        <option value="competition4104">
+          Alola Friendly - Masters Division
+        </option>
+        <!-- END SM COMPETITIONS -->
+        <!-- ORAS LADDERS -->
+        <option disabled value="#">
+          ORAS Ladders
+        </option>
+        <option value="oras_117_0">
+          ORAS Season 17 - All
+        </option>
+        <option value="oras_117_1">
+          ORAS Season 17 - Singles
+        </option>
+        <option value="oras_117_2">
+          ORAS Season 17 - Doubles
+        </option>
+        <option value="oras_117_3">
+          ORAS Season 17 - Triples
+        </option>
+        <option value="oras_117_4">
+          ORAS Season 17 - Rotations
+        </option>
+        <!-- END ORAS LADDERS -->
+      </select>
+      <button id="showstats" onclick="resetData(0);" type="button2">Show stats!</button>
+      <p id="formatinfo"></p>
     </div>
-    <div id="info">
-        <div id="selectandbutton">
-            <label id="selectformat">Select format:</label>
-            <select id="select">
-                <option disabled value="#">
-                    Current USUM Ladder
-                </option>
-				<option value="usum_315_0">
-                    Season 15 - All
-                </option>
-                <option value="usum_315_1" selected="selected">
-                    Season 15 - Singles
-                </option>
-                <option value="usum_315_2">
-                    Season 15 - Doubles
-                </option>
-                <option value="usum_315_5">
-                    Season 15 - Special
-                </option>
-                <option value="usum_315_6">
-                    Season 15 - VGC
-                </option>
-				<option disabled value="#">
-                    Current Pokemon Showdown Ladder
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_8_18">
-                    PS Gen 7 BSS August 2018 (Rating: 1630)
-                </option>
-				<option disabled value="#">
-                    USUM Ladders
-                </option>
-				<option value="usum_314_0">
-                    Season 14 - All
-                </option>
-                <option value="usum_314_1">
-                    Season 14 - Singles
-                </option>
-                <option value="usum_314_2">
-                    Season 14 - Doubles
-                </option>
-                <option value="usum_314_5">
-                    Season 14 - Special
-                </option>
-                <option value="usum_314_6">
-                    Season 14 - VGC
-                </option>
-				<option value="usum_313_0">
-                    Season 13 - All
-                </option>
-                <option value="usum_313_1">
-                    Season 13 - Singles
-                </option>
-                <option value="usum_313_2">
-                    Season 13 - Doubles
-                </option>
-                <option value="usum_313_5">
-                    Season 13 - Special
-                </option>
-                <option value="usum_313_6">
-                    Season 13 - VGC
-                </option>
-				<option value="usum_312_0">
-                    Season 12 - All
-                </option>
-                <option value="usum_312_1">
-                    Season 12 - Singles
-                </option>
-                <option value="usum_312_2">
-                    Season 12 - Doubles
-                </option>
-                <option value="usum_312_5">
-                    Season 12 - Special
-                </option>
-                <option value="usum_312_6">
-                    Season 12 - VGC
-                </option>
-				<option value="usum_311_0">
-                    Season 11 - All
-                </option>
-                <option value="usum_311_1">
-                    Season 11 - Singles
-                </option>
-                <option value="usum_311_2">
-                    Season 11 - Doubles
-                </option>
-                <option value="usum_311_5">
-                    Season 11 - Special
-                </option>
-                <option value="usum_311_6">
-                    Season 11 - VGC
-                </option>
-				<option value="usum_310_0">
-                    Season 10 - All
-                </option>
-                <option value="usum_310_1">
-                    Season 10 - Singles
-                </option>
-                <option value="usum_310_2">
-                    Season 10 - Doubles
-                </option>
-                <option value="usum_310_5">
-                    Season 10 - Special
-                </option>
-                <option value="usum_310_6">
-                    Season 10 - VGC
-                </option>
-				<option value="usum_309_0">
-                    Season 9 - All
-                </option>
-                <option value="usum_309_1">
-                    Season 9 - Singles
-                </option>
-                <option value="usum_309_2">
-                    Season 9 - Doubles
-                </option>
-                <option value="usum_309_5">
-                    Season 9 - Special
-                </option>
-                <option value="usum_309_6">
-                    Season 9 - VGC
-                </option>
-				<option value="usum_308_0">
-                    Season 8 - All
-                </option>
-                <option value="usum_308_1">
-                    Season 8 - Singles
-                </option>
-                <option value="usum_308_2">
-                    Season 8 - Doubles
-                </option>
-                <option value="usum_308_5">
-                    Season 8 - Special
-                </option>
-                <option value="usum_308_6">
-                    Season 8 - VGC
-                </option>
-				<option value="usum_307_1">
-                    Season 7 - Singles
-                </option>
-                <option value="usum_307_2">
-                    Season 7 - Doubles
-                </option>
-                <option value="usum_307_5">
-                    Season 7 - Special
-                </option>
-                <option value="usum_307_6">
-                    Season 7 - VGC
-                </option>
-				<option disabled value="#">
-                    Pokemon Showdown Old Ladders (USUM)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_12_17">
-                    PS Gen 7 BSS December 2017 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_1_18">
-                    PS Gen 7 BSS January 2018 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_2_18">
-                    PS Gen 7 BSS February 2018 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_3_18">
-                    PS Gen 7 BSS March 2018 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_4_18">
-                    PS Gen 7 BSS April 2018 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_5_18">
-                    PS Gen 7 BSS May 2018 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_6_18">
-                    PS Gen 7 BSS June 2018 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_7_18">
-                    PS Gen 7 BSS July 2018 (Rating: 1630)
-                </option>
-				<option disabled value="#">
-                    Pokemon Showdown Old Ladders (Sun and Moon)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_12_16">
-                    PS Gen 7 BSS December 2016 (Rating: 1630)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_1_17">
-                    PS Gen 7 BSS January 2017 (Rating: 1630)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_2_17">
-                    PS Gen 7 BSS February 2017 (Rating: 1630)
-                </option>
-                <option value="ps_gen7battlespotsingles_1630_5_17">
-                    PS Gen 7 BSS May 2017 (Rating: 1630)
-                </option>				
-                <option value="ps_gen7battlespotsingles_1630_6_17">
-                    PS Gen 7 BSS June 2017 (Rating: 1630)
-                </option>								
-                <option value="ps_gen7battlespotsingles_1630_7_17">
-                    PS Gen 7 BSS July 2017 (Rating: 1630)
-                </option>							
-                <option value="ps_gen7battlespotsingles_1630_8_17">
-                    PS Gen 7 BSS August 2017 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_9_17">
-                    PS Gen 7 BSS September 2017 (Rating: 1630)
-                </option>
-				<option value="ps_gen7battlespotsingles_1630_10_17">
-                    PS Gen 7 BSS October 2017 (Rating: 1630)
-                </option>	
-				<option disabled value="#">
-                    SM Ladders
-                </option>
-                <option value="sm_202_0">
-                    Season 2 - All
-                </option>
-                <option value="sm_202_1">
-                    Season 2 - Singles
-                </option>
-                <option value="sm_202_2">
-                    Season 2 - Doubles
-                </option>
-                <option value="sm_202_5">
-                    Season 2 - Special
-                </option>
-                <option value="sm_202_6">
-                    Season 2 - VGC
-                </option>
-                <option value="sm_203_0">
-                    Season 3 - All
-                </option>
-                <option value="sm_203_1">
-                    Season 3 - Singles
-                </option>
-                <option value="sm_203_2">
-                    Season 3 - Doubles
-                </option>
-                <option value="sm_203_5">
-                    Season 3 - Special
-                </option>
-                <option value="sm_203_6">
-                    Season 3 - VGC
-                </option>    
-				<option value="sm_204_0">
-                    Season 4 - All
-                </option>
-                <option value="sm_204_1">
-                    Season 4 - Singles
-                </option>
-                <option value="sm_204_2">
-                    Season 4 - Doubles
-                </option>
-                <option value="sm_204_5">
-                    Season 4 - Special
-                </option>
-                <option value="sm_204_6">
-                    Season 4 - VGC
-                </option>
-				<option value="sm_205_0">
-                    Season 5 - All
-                </option>
-                <option value="sm_205_1">
-                    Season 5 - Singles
-                </option>
-                <option value="sm_205_2">
-                    Season 5 - Doubles
-                </option>
-                <option value="sm_205_5">
-                    Season 5 - Special
-                </option>
-                <option value="sm_205_6">
-                    Season 5 - VGC
-                </option>
-				<option value="sm_206_0">
-                    Season 6 - All
-                </option>
-                <option value="sm_206_1">
-                    Season 6 - Singles
-                </option>
-                <option value="sm_206_2">
-                    Season 6 - Doubles
-                </option>
-                <option value="sm_206_5">
-                    Season 6 - Special
-                </option>
-                <option value="sm_206_6">
-                    Season 6 - VGC
-                </option>
-				<option disabled value="#">
-                    USUM Competitions
-                </option>
-                <option value="competition5111">
-                    Dragon Cup - Master Division
-                </option>			
-                <option disabled value="#">
-                    Sun and Moon Competitions
-                </option>
-                <option value="competition4101">
-                    Battle of Alola - Junior Division
-                </option>
-                <option value="competition4102">
-                    Battle of Alola - Masters Division
-                </option>
-                <option value="competition4103">
-                    Alola Friendly - Junior Division
-                </option>
-                <option value="competition4104">
-                    Alola Friendly - Masters Division
-                </option>
-                <option disabled value="#">
-                    ORAS Ladders
-                </option>
-                <option value="oras_117_0">
-                    ORAS Season 17 - All
-                </option>
-                <option value="oras_117_1">
-                    ORAS Season 17 - Singles
-                </option>
-                <option value="oras_117_2">
-                    ORAS Season 17 - Doubles
-                </option>
-                <option value="oras_117_3">
-                    ORAS Season 17 - Triples
-                </option>
-                <option value="oras_117_4">
-                    ORAS Season 17 - Rotations
-                </option>
-            </select>
-            <button id="showstats" onclick="resetData(0);" type="button2">Show stats!</button>
-            <p id="formatinfo"></p>
+  </div>
+  <div id="left">
+    <div id="rankingsearch">
+      <div id="pokemonbyranking">
+        Pokemon by ranking
+      </div>
+      <div id="searchtext" style=\"padding:0px 1px 0px 2px\"><button onClick='emptysearch()'>Clear</button></div>
+
+      <div>
+        <input id="searchbox" type="text" placeholder="search!" oninput="updateSearch(false)" value="">
+      </div>
+    </div>
+    <div id="jpsearchresults"></div>
+    <div id="buttonlist"></div>
+  </div>
+  <div id="right">
+    <div id="rightcontentwithtabs">
+      <div id="tabs"><span id="tabsspan">
+          <div id="psnotabs"> </div>
+      </div>
+      <div id="rightcontent">
+        <div id="monsinfo">
+          <p id="monsinfo2"> </p>
+          <p id="tabname"><span id="tabnamespan"> </span>
+          </p>
+          <p id="noitems"></p>
         </div>
+        <table id="table">
+          <tr>
+            <td id="td1">#1</td>
+            <td id="td2"></td>
+            <td id="td3"></td>
+          </tr>
+          <tr>
+            <td id="td4">#2</td>
+            <td id="td5"></td>
+            <td id="td6"></td>
+          </tr>
+          <tr>
+            <td id="td7">#3</td>
+            <td id="td8"></td>
+            <td id="td9"></td>
+          </tr>
+          <tr>
+            <td id="td10">#4</td>
+            <td id="td11"></td>
+            <td id="td12"></td>
+          </tr>
+          <tr>
+            <td id="td13">#5</td>
+            <td id="td14"></td>
+            <td id="td15"></td>
+          </tr>
+          <tr>
+            <td id="td16">#6</td>
+            <td id="td17"></td>
+            <td id="td18"></td>
+          </tr>
+          <tr>
+            <td id="td19">#7</td>
+            <td id="td20"></td>
+            <td id="td21"></td>
+          </tr>
+          <tr>
+            <td id="td22">#8</td>
+            <td id="td23"></td>
+            <td id="td24"></td>
+          </tr>
+          <tr>
+            <td id="td25">#9</td>
+            <td id="td26"></td>
+            <td id="td27"></td>
+          </tr>
+          <tr>
+            <td id="td28">#10</td>
+            <td id="td29"></td>
+            <td id="td30"></td>
+          </tr>
+          <tr>
+            <td id="td31">#11</td>
+            <td id="td32"></td>
+            <td id="td33"></td>
+          </tr>
+          <tr>
+            <td id="td34">#12</td>
+            <td id="td35"></td>
+            <td id="td36"></td>
+          </tr>
+          <tr>
+            <td id="td37">#13</td>
+            <td id="td38"></td>
+            <td id="td39"></td>
+          </tr>
+          <tr>
+            <td id="td40">#14</td>
+            <td id="td41"></td>
+            <td id="td42"></td>
+          </tr>
+          <tr>
+            <td id="td43">#15</td>
+            <td id="td44"></td>
+            <td id="td45"></td>
+          </tr>
+          <tr>
+            <td id="td46">#16</td>
+            <td id="td47"></td>
+            <td id="td48"></td>
+          </tr>
+          <tr>
+            <td id="td49">#17</td>
+            <td id="td50"></td>
+            <td id="td51"></td>
+          </tr>
+          <tr>
+            <td id="td52">#18</td>
+            <td id="td53"></td>
+            <td id="td54"></td>
+          </tr>
+          <tr>
+            <td id="td55">#19</td>
+            <td id="td56"></td>
+            <td id="td57"></td>
+          </tr>
+          <tr>
+            <td id="td58">#20</td>
+            <td id="td59"></td>
+            <td id="td60"></td>
+          </tr>
+          <tr>
+            <td id="td61"></td>
+            <td id="td62"></td>
+            <td id="td63"></td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div id="left">
-        <div id="rankingsearch">
-            <div id="pokemonbyranking">
-                Pokemon by ranking
-            </div>
-            <div id="searchtext" style=\"padding:0px 1px 0px 2px\"><button onClick='emptysearch()'>Clear</button></div>
-            
-            <div>
-                <input id="searchbox" type="text" placeholder="search!" oninput="updateSearch(false)" value="">
-            </div>
-        </div>
-        <div id="jpsearchresults"></div>
-        <div id="buttonlist"></div>
-    </div>
-    <div id="right">
-        <div id="rightcontentwithtabs">
-            <div id="tabs"><span id="tabsspan">
-				<div id="psnotabs"> </div>
-			</div>
-			<div id="rightcontent">            
-				<div id="monsinfo">
-					<p id="monsinfo2"> </p>
-					<p id="tabname"><span id="tabnamespan"> </span>
-                </p>
-                <p id="noitems"></p>
-            </div>
-            <table id="table">
-                <tr>
-                    <td id="td1">#1</td>
-                    <td id="td2"></td>
-                    <td id="td3"></td>
-                </tr>
-                <tr>
-                    <td id="td4">#2</td>
-                    <td id="td5"></td>
-                    <td id="td6"></td>
-                </tr>
-                <tr>
-                    <td id="td7">#3</td>
-                    <td id="td8"></td>
-                    <td id="td9"></td>
-                </tr>
-                <tr>
-                    <td id="td10">#4</td>
-                    <td id="td11"></td>
-                    <td id="td12"></td>
-                </tr>
-                <tr>
-                    <td id="td13">#5</td>
-                    <td id="td14"></td>
-                    <td id="td15"></td>
-                </tr>
-                <tr>
-                    <td id="td16">#6</td>
-                    <td id="td17"></td>
-                    <td id="td18"></td>
-                </tr>
-                <tr>
-                    <td id="td19">#7</td>
-                    <td id="td20"></td>
-                    <td id="td21"></td>
-                </tr>
-                <tr>
-                    <td id="td22">#8</td>
-                    <td id="td23"></td>
-                    <td id="td24"></td>
-                </tr>
-                <tr>
-                    <td id="td25">#9</td>
-                    <td id="td26"></td>
-                    <td id="td27"></td>
-                </tr>
-                <tr>
-                    <td id="td28">#10</td>
-                    <td id="td29"></td>
-                    <td id="td30"></td>
-                </tr>
-                <tr>
-                    <td id="td31">#11</td>
-                    <td id="td32"></td>
-                    <td id="td33"></td>
-                </tr>
-                <tr>
-                    <td id="td34">#12</td>
-                    <td id="td35"></td>
-                    <td id="td36"></td>
-                </tr>
-                <tr>
-                    <td id="td37">#13</td>
-                    <td id="td38"></td>
-                    <td id="td39"></td>
-                </tr>
-                <tr>
-                    <td id="td40">#14</td>
-                    <td id="td41"></td>
-                    <td id="td42"></td>
-                </tr>
-                <tr>
-                    <td id="td43">#15</td>
-                    <td id="td44"></td>
-                    <td id="td45"></td>
-                </tr>
-                <tr>
-                    <td id="td46">#16</td>
-                    <td id="td47"></td>
-                    <td id="td48"></td>
-                </tr>
-                <tr>
-                    <td id="td49">#17</td>
-                    <td id="td50"></td>
-                    <td id="td51"></td>
-                </tr>
-                <tr>
-                    <td id="td52">#18</td>
-                    <td id="td53"></td>
-                    <td id="td54"></td>
-                </tr>
-                <tr>
-                    <td id="td55">#19</td>
-                    <td id="td56"></td>
-                    <td id="td57"></td>
-                </tr>
-                <tr>
-                    <td id="td58">#20</td>
-                    <td id="td59"></td>
-                    <td id="td60"></td>
-                </tr>
-                <tr>
-                    <td id="td61"></td>
-                    <td id="td62"></td>
-                    <td id="td63"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    </div>
-    <div id="about" class="about">
-        <div id="aboutpage">about this page</div>
-        <span id="credits" class="credits"><img id="leftswablu" src="images/swabluicon.png">by <strong>boe</strong><img id="rightswablu" src="images/swabluicon.png"><br><br>a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon and Ultra Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to<br><strong> Fischgrat</strong>, <strong>Lego</strong> and <strong>Alpha Ninja</strong> who helped out with programming<br> <strong>Yosshi</strong>, <strong>hz1016hz</strong> and <strong>youmu@poke</strong> who helped out with translating<br> <strong>hetoord </strong> who made the original battlespotstats.com <br> <br> for questions, errors, or anything else, please contact me at boehijt@gmail.com<br> <br> <strong>Pokemon</strong> is © 1995-2017 <strong> Nintendo</strong></span>
-    </div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="data/dict.js"></script>
-    <script src="data/aliases.js"></script>
-    <script src="data/jpdict.js"></script>	
-    <script src="scripts/bsus.js"></script>
+  </div>
+  <div id="about" class="about">
+    <div id="aboutpage">about this page</div>
+    <span id="credits" class="credits"><img id="leftswablu" src="images/swabluicon.png">by <strong>boe</strong><img id="rightswablu" src="images/swabluicon.png"><br><br>a page to view full usage stats for the Battle Spot ladders and competitions in
+      Pokemon Sun and Moon and Ultra Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to<br><strong> Fischgrat</strong>, <strong>Lego</strong> and <strong>Alpha Ninja</strong> who helped out with
+      programming<br> <strong>Yosshi</strong>, <strong>hz1016hz</strong> and <strong>youmu@poke</strong> who helped out with translating<br> <strong>hetoord </strong> who made the original battlespotstats.com <br> <br> for questions, errors, or
+      anything else, please contact me at boehijt@gmail.com<br> <br> <strong>Pokemon</strong> is © 1995-2017 <strong> Nintendo</strong></span>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="data/dict.js"></script>
+  <script src="data/aliases.js"></script>
+  <script src="data/jpdict.js"></script>
+  <script src="scripts/bsus.js"></script>
 </body>
 
 </html>
